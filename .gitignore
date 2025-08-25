@@ -1,0 +1,21 @@
+# ignore all files inside ./notebooks/OakCreek_from_sundar
+notebooks/OakCreek_from_sundar/**
+
+# ignore all files inside ./notebooks/MODIS_raw
+notebooks/MODIS_raw/**
+
+# ignore all files inside ./notebooks/images
+notebooks/images/**
+
+# ignore all files inside ./notebooks/ELM_from_huilin
+notebooks/ELM_from_huilin/**
+
+# ignore all files inside ./notebooks/data
+notebooks/data/**
+
+# ignore all files inside ./data-processed
+data-processed/**
+
+# ignore .ipynb_checkpoints folders
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/

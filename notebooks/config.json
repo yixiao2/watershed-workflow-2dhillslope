@@ -1,0 +1,12 @@
+{
+  "start_year": 2013,
+  "end_year": 2023,
+  "_comment_years": "Specify the range of years for simulation",
+    
+  "nyears_cyclic_steadystate": 10,
+  "_comment_nyears_cyclic": "Number of years to simulate steady-state cyclic spinup.",
+    
+  "watershed_name": "OakCreek",
+  "hucs": "170300020307",
+  "site_name": "NF01"
+}

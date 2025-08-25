@@ -16,6 +16,9 @@ notebooks/data/**
 # ignore all files inside ./data-processed
 data-processed/**
 
+# a trick to keep directories
+!.gitkeep
+
 # ignore .ipynb_checkpoints folders
 .ipynb_checkpoints/
 **/.ipynb_checkpoints/

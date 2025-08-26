@@ -1,0 +1,108 @@
+    CHEMISTRY
+      LOGGING_VERBOSITY 1
+      MAXIMUM_REACTION_CUTS 40
+      MAX_DLNC_RREACT 30
+      USE_TOTAL_CONCENTRATION_AS_GUESS
+      PRIMARY_SPECIES
+        C5H7O2N(aq)
+        CH2O(aq)
+        CO2(aq)
+        N2(aq)
+        NH4+
+        NO2-
+        NO3-
+        O2(aq)
+        Tsw
+        Tgw
+        Tr
+        PyC
+      /
+
+  GENERAL_REACTION
+  REACTION PyC <-> CH2O(aq)
+  FORWARD_RATE 1.d-6
+  BACKWARD_RATE 0.d0
+  /
+
+  REACTION_SANDBOX
+    CYBERNETIC
+      F1    0.65
+      F2    0.99d0
+      F3    0.2167d0
+      K1    28.26d0 1/d
+      Ka1   0.001d0 mM
+      Kd1   0.25d0 mM
+      K2    23.28d0 1/d
+      Ka2   0.004d0 mM
+      Kd2   0.25d0 mM
+      K3    84.78d0 1/d
+      Ka3   0.001d0 mM
+      Kd3   0.25d0 mM
+      Kdeg  0.242d0 1/d
+      MOBILE_BIOMASS
+      REFERENCE_TEMPERATURE 25.d0 ! degrees C
+      ACTIVATION_ENERGY 89.d-3 kJ/mol  ! 89.d0 J/mol
+      INHIBIT_BY_REACTANTS 1.d-15
+      INHIBIT_FUNC_SMOOTHSTEP 1.d-3
+    /
+  /
+
+      DATABASE ./cybernetic.dat
+      LOG_FORMULATION
+      ACTIVITY_COEFFICIENTS OFF
+      OUTPUT
+        ALL
+        TOTAL
+      /
+    END
+
+CONSTRAINT ICsubsurface
+  CONCENTRATIONS
+    C5H7O2N(aq) 1e-05 T 
+    CH2O(aq) 4.16e-05 T 
+    CO2(aq) 2.48e-03 T 
+    N2(aq) 1e-10 T 
+    NH4+ 1e-10 T 
+    NO2- 1e-10 T 
+    NO3- 3.96e-04 T 
+    O2(aq) 2.67e-04 T
+    Tsw 1e-20 T 
+    Tgw 1e-05 T 
+    Tr 1e-20 T 
+    PyC 1e-10 T 
+  /
+/
+  
+CONSTRAINT BCrain
+  CONCENTRATIONS
+    C5H7O2N(aq) 1e-05 T 
+    CH2O(aq) 2.58e-04 T 
+    CO2(aq) 1.12e-03 T 
+    N2(aq) 1e-10 T 
+    NH4+ 1e-10 T 
+    NO2- 1e-10 T 
+    NO3- 8.87e-06 T
+    O2(aq) 3.59e-04 T
+    Tsw 1e-20 T 
+    Tgw 1e-20 T 
+    Tr 1e-05 T 
+    PyC 1e-20 T 
+  /
+/
+
+CONSTRAINT ICsurface
+  CONCENTRATIONS
+    C5H7O2N(aq) 1e-05 T 
+    CH2O(aq) 2.58e-04 T 
+    CO2(aq) 1.12e-03 T 
+    N2(aq) 1e-10 T 
+    NH4+ 1e-10 T 
+    NO2- 1e-10 T 
+    NO3- 8.87e-06 T
+    O2(aq) 3.59e-04 T
+    Tsw 1e-05 T 
+    Tgw 1e-20 T 
+    Tr 1e-20 T 
+    PyC 1e-05 T 
+  /
+/

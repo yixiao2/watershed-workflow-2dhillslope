@@ -1,0 +1,491 @@
+    <ParameterList name="flow and transport">
+      <Parameter name="PK type" type="string" value="weak MPC" />
+      <Parameter name="PKs order" type="Array(string)" value="{water_balance, reactive transport}" />
+      <Parameter name="master PK index" type="int" value="0" />
+      <ParameterList name="verbose object">
+        <Parameter name="verbosity level" type="string" value="default" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="surface-subsurface transport coupler">
+      <Parameter name="PK type" type="string" value="surface subsurface transport" />
+      <Parameter name="PK name" type="string" value="surface subsurface transport" />
+      <Parameter name="PKs order" type="Array(string)" value="{subsurface transport, surface transport}" />
+      <Parameter name="component names" type="Array(string)" value="{C5H7O2N(aq), CH2O(aq), CO2(aq), N2(aq), NH4+, NO2-, NO3-, O2(aq), Tsw, Tgw, Tr, PyC}" />
+      <ParameterList name="verbose object">
+        <Parameter name="name" type="string" value="Coupled TransportPK" />
+        <Parameter name="verbosity level" type="string" value="default" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="subsurface transport">
+      <Parameter name="PK type" type="string" value="transport ats" />
+      <Parameter name="saturation liquid key" type="string" value="saturation_liquid" />
+      <Parameter name="previous saturation liquid key" type="string" value="prev_saturation_liquid" />
+      <Parameter name="flux_key" type="string" value="water_flux" />
+      <Parameter name="molar_density_key" type="string" value="molar_density_liquid" />
+      <Parameter name="component names" type="Array(string)" value="{C5H7O2N(aq), CH2O(aq), CO2(aq), N2(aq), NH4+, NO2-, NO3-, O2(aq), Tsw, Tgw, Tr, PyC}" />
+      <Parameter name="number of liquid components" type="int" value="12" />
+      <Parameter name="component molar masses" type="Array(double)" value="{30.0158, 30.0158, 44.0098, 28.0135, 18.0385, 46.0055, 62.0049, 31.9988, 18.0153, 18.0153, 18.0153, 18.0153}" />
+      <Parameter name="component max saturations" type="Array(double)" value="{55e-3,141.9e-3,55e-2,55e-9,55e-9,55e-9,55e-4,165e-3,55e-4,55e-4,55e-4,550e-4}" />
+      <Parameter name="spatial discretization order" type="int" value="1" />
+      <Parameter name="temporal discretization order" type="int" value="1" />
+      <Parameter name="cfl" type="double" value="1.0" />
+      <Parameter name="flow mode" type="string" value="transient" />
+      <Parameter name="transport subcycling" type="bool" value="false" />
+      <Parameter name="number of aqueous components" type="int" value="12" />
+      <Parameter name="number of gaseous components" type="int" value="0" />
+      <Parameter name="runtime diagnostics: regions" type="Array(string)" value="{}" />
+      <Parameter name="debug cells" type="Array(int)" value="{99}" />
+      <ParameterList name="verbose object">
+        <Parameter name="verbosity level" type="string" value="default" />
+      </ParameterList>
+      <ParameterList name="initial condition" type="ParameterList">
+      </ParameterList>
+      <ParameterList name="reconstruction">
+        <Parameter name="polynomial order" type="int" value="0" />
+        <Parameter name="limiter" type="string" value="tensorial" />
+        <Parameter name="limiter extension for transport" type="bool" value="true" />
+      </ParameterList>
+      <ParameterList name="molecular diffusion">
+        <Parameter name="aqueous names" type="Array(string)" value="{}" />
+        <Parameter name="aqueous values" type="Array(double)" value="{}" />
+      </ParameterList>
+      <ParameterList name="material properties">
+        <ParameterList name="domain">
+          <Parameter name="regions" type="Array(string)" value="{computational domain}" />
+          <Parameter name="model" type="string" value="scalar" />
+          <Parameter name="aqueous tortuosity" type="double" value="1.0" />
+          <Parameter name="gaseous tortuosity" type="double" value="1.0" />
+          <ParameterList name="parameters for scalar">
+            <Parameter name="alpha" type="double" value="0.0001" />
+          </ParameterList>
+        </ParameterList>
+      </ParameterList>
+      <ParameterList name="diffusion">
+        <Parameter name="discretization primary" type="string" value="mfd: two-point flux approximation" />
+        <Parameter name="schema" type="Array(string)" value="{face, cell}" />
+        <Parameter name="preconditioner schema" type="Array(string)" value="{face}" />
+      </ParameterList>
+      <ParameterList name="inverse">
+        <Parameter name="iterative method" type="string" value="pcg" />
+        <Parameter name="preconditioning method" type="string" value="boomer amg" />
+        <ParameterList name="pcg parameters">
+          <Parameter name="maximum number of iterations" type="int" value="4000" />
+          <Parameter name="error tolerance" type="double" value="1e-16" />
+          <Parameter name="convergence criteria" type="Array(string)" value="{relative rhs, make one iteration}" />
+          <ParameterList name="verbose object">
+            <Parameter name="verbosity level" type="string" value="default" />
+          </ParameterList>
+        </ParameterList>
+        <ParameterList name="boomer amg parameters">
+          <Parameter name="tolerance" type="double" value="0.0" />
+          <Parameter name="smoother sweeps" type="int" value="1" />
+          <Parameter name="cycle applications" type="int" value="1" />
+          <Parameter name="strong threshold" type="double" value="0.65" />
+          <ParameterList name="verbose object">
+            <Parameter name="verbosity level" type="string" value="default" />
+          </ParameterList>
+        </ParameterList>
+      </ParameterList>
+      <ParameterList name="boundary conditions">
+        <ParameterList name="concentration" type="ParameterList">
+          <ParameterList name="BC coupling">
+            <Parameter name="spatial distribution method" type="string" value="domain coupling" />
+            <Parameter name="submodel" type="string" value="conserved quantity" />
+            <Parameter name="regions" type="Array(string)" value="{surface}" />
+            <ParameterList name="fields">
+              <Parameter name="conserved_quantity_key" type="string" value="surface-total_component_quantity" />
+              <Parameter name="field_out_key" type="string" value="surface-total_component_concentration" />
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="left_subsurface C5H7O2N" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{left_face}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{C5H7O2N(aq)}" />
+            <ParameterList name="boundary concentration function">
+              <ParameterList name="function-constant">
+                <Parameter name="value" type="double" value="55.0e-5" />
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="right_subsurface C5H7O2N" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{right_face}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{C5H7O2N(aq)}" />
+            <ParameterList name="boundary concentration function">
+              <ParameterList name="function-constant">
+                <Parameter name="value" type="double" value="55.0e-5" />
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="left_subsurface CH2O" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{left_face}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{CH2O(aq)}" />
+            <ParameterList name="boundary concentration function">
+              <ParameterList name="function-constant">
+                <Parameter name="value" type="double" value="141.9e-4" />
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="right_subsurface CH2O" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{right_face}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{CH2O(aq)}" />
+            <ParameterList name="boundary concentration function">
+              <ParameterList name="function-constant">
+                <Parameter name="value" type="double" value="141.9e-6" />
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="left_subsurface PyC" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{left_face}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{PyC}" />
+            <ParameterList name="boundary concentration function">
+              <ParameterList name="function-constant">
+                <Parameter name="value" type="double" value="550e-6" />
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="right_subsurface PyC" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{right_face}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{PyC}" />
+            <ParameterList name="boundary concentration function">
+              <ParameterList name="function-constant">
+                <Parameter name="value" type="double" value="275e-6" />
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="left_subsurface CO2" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{left_face}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{CO2(aq)}" />
+            <ParameterList name="boundary concentration function">
+              <ParameterList name="function-constant">
+                <Parameter name="value" type="double" value="55.0e-3" />
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="right_subsurface CO2" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{right_face}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{CO2(aq)}" />
+            <ParameterList name="boundary concentration function">
+              <ParameterList name="function-constant">
+                <Parameter name="value" type="double" value="55.0e-5" />
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="left_subsurface N2" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{left_face}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{N2(aq)}" />
+            <ParameterList name="boundary concentration function">
+              <ParameterList name="function-constant">
+                <Parameter name="value" type="double" value="55.0e-10" />
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="right_subsurface N2" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{right_face}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{N2(aq)}" />
+            <ParameterList name="boundary concentration function">
+              <ParameterList name="function-constant">
+                <Parameter name="value" type="double" value="55.0e-10" />
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="left_subsurface NH4+" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{left_face}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{NH4+}" />
+            <ParameterList name="boundary concentration function">
+              <ParameterList name="function-constant">
+                <Parameter name="value" type="double" value="55.0e-10" />
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="right_subsurface NH4+" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{right_face}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{NH4+}" />
+            <ParameterList name="boundary concentration function">
+              <ParameterList name="function-constant">
+                <Parameter name="value" type="double" value="55.0e-10" />
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="left_subsurface NO2-" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{left_face}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{NO2-}" />
+            <ParameterList name="boundary concentration function">
+              <ParameterList name="function-constant">
+                <Parameter name="value" type="double" value="55.0e-10" />
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="right_subsurface NO2-" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{right_face}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{NO2-}" />
+            <ParameterList name="boundary concentration function">
+              <ParameterList name="function-constant">
+                <Parameter name="value" type="double" value="55.0e-10" />
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="left_subsurface NO3-" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{left_face}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{NO3-}" />
+            <ParameterList name="boundary concentration function">
+              <ParameterList name="function-constant">
+                <Parameter name="value" type="double" value="55.0e-5" />
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="right_subsurface NO3-" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{right_face}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{NO3-}" />
+            <ParameterList name="boundary concentration function">
+              <ParameterList name="function-constant">
+                <Parameter name="value" type="double" value="55.0e-5" />
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="left_subsurface O2" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{left_face}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{O2(aq)}" />
+            <ParameterList name="boundary concentration function">
+              <ParameterList name="function-constant">
+                <Parameter name="value" type="double" value="165.0e-4" />
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="right_subsurface O2" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{right_face}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{O2(aq)}" />
+            <ParameterList name="boundary concentration function">
+              <ParameterList name="function-constant">
+                <Parameter name="value" type="double" value="165.0e-4" />
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="left_subsurface Tsw" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{left_face}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{Tsw}" />
+            <ParameterList name="boundary concentration function">
+              <ParameterList name="function-constant">
+                <Parameter name="value" type="double" value="55e-5" />
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="right_subsurface Tsw" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{right_face}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{Tsw}" />
+            <ParameterList name="boundary concentration function">
+              <ParameterList name="function-constant">
+                <Parameter name="value" type="double" value="55e-5" />
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="left_subsurface Tgw" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{left_face}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{Tgw}" />
+            <ParameterList name="boundary concentration function">
+              <ParameterList name="function-constant">
+                <Parameter name="value" type="double" value="55e-5" />
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="right_subsurface Tgw" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{right_face}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{Tgw}" />
+            <ParameterList name="boundary concentration function">
+              <ParameterList name="function-constant">
+                <Parameter name="value" type="double" value="55e-5" />
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="left_subsurface Tr" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{left_face}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{Tr}" />
+            <ParameterList name="boundary concentration function">
+              <ParameterList name="function-constant">
+                <Parameter name="value" type="double" value="55e-20" />
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="right_subsurface Tr" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{right_face}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{Tr}" />
+            <ParameterList name="boundary concentration function">
+              <ParameterList name="function-constant">
+                <Parameter name="value" type="double" value="55e-20" />
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+        </ParameterList>
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="surface transport">
+      <Parameter name="PK type" type="string" value="transport ats" />
+      <Parameter name="domain name" type="string" value="surface" />
+      <Parameter name="saturation liquid key" type="string" value="surface-ponded_depth" />
+      <Parameter name="previous saturation liquid key" type="string" value="surface-prev_ponded_depth" />
+      <Parameter name="flux_key" type="string" value="surface-water_flux" />
+      <Parameter name="molar_density_key" type="string" value="surface-molar_density_liquid" />
+      <Parameter name="porosity key" type="string" value="surface-one" />
+      <Parameter name="component names" type="Array(string)" value="{C5H7O2N(aq), CH2O(aq), CO2(aq), N2(aq), NH4+, NO2-, NO3-, O2(aq), Tsw, Tgw, Tr, PyC}" />
+      <Parameter name="number of liquid components" type="int" value="12" />
+      <Parameter name="component molar masses" type="Array(double)" value="{30.0158, 30.0158, 44.0098, 28.0135, 18.0385, 46.0055, 62.0049, 31.9988, 18.0153, 18.0153, 18.0153, 18.0153}" />
+      <Parameter name="component max saturations" type="Array(double)" value="{1e-4,2.58e-3,1.12e-2,1e-9,1e-9,1e-9,8.87e-5,3.59e-3,1e-4,1e-4,1e-4,1e-4}" />
+      <Parameter name="spatial discretization order" type="int" value="1" />
+      <Parameter name="temporal discretization order" type="int" value="1" />
+      <Parameter name="cfl" type="double" value="1.0" />
+      <Parameter name="water tolerance" type="double" value="0.001" />
+      <Parameter name="transport subcycling" type="bool" value="false" />
+      <Parameter name="number of aqueous components" type="int" value="12" />
+      <Parameter name="number of gaseous components" type="int" value="0" />
+      <Parameter name="runtime diagnostics: regions" type="Array(string)" value="{}" />
+      <Parameter name="water source in meters" type="bool" value="true" />
+      <ParameterList name="initial condition" type="ParameterList">
+      </ParameterList>
+      <ParameterList name="verbose object">
+        <Parameter name="verbosity level" type="string" value="default" />
+      </ParameterList>
+      <ParameterList name="reconstruction">
+        <Parameter name="polynomial order" type="int" value="0" />
+        <Parameter name="limiter" type="string" value="tensorial" />
+        <Parameter name="limiter extension for transport" type="bool" value="true" />
+      </ParameterList>
+      <ParameterList name="inverse">
+        <Parameter name="iterative method" type="string" value="pcg" />
+        <Parameter name="preconditioning method" type="string" value="boomer amg" />
+        <ParameterList name="pcg parameters">
+          <Parameter name="maximum number of iterations" type="int" value="400" />
+          <Parameter name="error tolerance" type="double" value="1e-10" />
+          <Parameter name="convergence criteria" type="Array(string)" value="{relative rhs, make one iteration}" />
+          <ParameterList name="verbose object">
+            <Parameter name="verbosity level" type="string" value="default" />
+          </ParameterList>
+        </ParameterList>
+        <ParameterList name="boomer amg parameters">
+          <Parameter name="tolerance" type="double" value="0.0" />
+          <Parameter name="smoother sweeps" type="int" value="1" />
+          <Parameter name="cycle applications" type="int" value="1" />
+          <Parameter name="strong threshold" type="double" value="0.65" />
+        </ParameterList>
+      </ParameterList>
+      <ParameterList name="molecular diffusion">
+        <Parameter name="aqueous names" type="Array(string)" value="{}" />
+        <Parameter name="aqueous values" type="Array(double)" value="{}" />
+      </ParameterList>
+      <ParameterList name="source terms">
+        <ParameterList name="geochemical" type="ParameterList">
+          <ParameterList name="Tracer injection" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{surface domain}" />
+            <Parameter name="solutes" type="Array(string)" value="{C5H7O2N(aq), CH2O(aq), CO2(aq), N2(aq), NH4+, NO2-, NO3-, O2(aq), Tsw, Tgw, Tr, PyC}" />
+            <Parameter name="times" type="Array(double)" value="{0,1e20}" />
+            <Parameter name="geochemical conditions" type="Array(string)" value="{BCrain, BCrain}" />
+            <Parameter name="time functions" type="Array(string)" value="{constant}" />
+            <Parameter name="ats units [moles/m^3]" type="bool" value="true" />
+          </ParameterList>
+        </ParameterList>
+        <ParameterList name="component mass source">
+          <ParameterList name="surface coupling">
+            <Parameter name="regions" type="Array(string)" value="{surface domain}" />
+            <Parameter name="spatial distribution method" type="string" value="domain coupling" />
+            <Parameter name="submodel" type="string" value="rate" />
+            <ParameterList name="fields">
+              <Parameter name="flux_key" type="string" value="water_flux" />
+              <Parameter name="copy_flux_key" type="string" value="next_timestep" />
+              <Parameter name="field_out_key" type="string" value="total_component_concentration" />
+              <Parameter name="field_in_key" type="string" value="surface-total_component_concentration" />
+            </ParameterList>
+          </ParameterList>
+        </ParameterList>
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="reactive transport" type="ParameterList">
+      <Parameter name="PK type" type="string" value="coupled reactive transport" />
+      <Parameter name="PK name" type="string" value="reactive transport" />
+      <Parameter name="PKs order" type="Array(string)" value="{chemistry coupler, surface-subsurface transport coupler}" />
+      <Parameter name="transport index" type="int" value="1" />
+    </ParameterList>
+    <ParameterList name="chemistry coupler" type="ParameterList">
+      <Parameter name="PK type" type="string" value="weak MPC" />
+      <Parameter name="PK name" type="string" value="coupled chemistry" />
+      <Parameter name="PKs order" type="Array(string)" value="{chemistry subsurface, chemistry surface}" />
+    </ParameterList>
+    <ParameterList name="chemistry subsurface" type="ParameterList">
+      <Parameter name="PK type" type="string" value="chemistry alquimia" />
+      <Parameter name="engine" type="string" value="PFloTran" />
+      <Parameter name="chemistry model" type="string" value="Alquimia" />
+      <Parameter name="domain name" type="string" value="domain" />
+      <Parameter name="engine input file" type="string" value="../reactions/pflotran_chemistry_cybernetic_smoothstep_pyc.txt" />
+      <Parameter name="activity model" type="string" value="unit" />
+      <Parameter name="maximum Newton iterations" type="int" value="1000" />
+      <Parameter name="tolerance" type="double" value="1e-15" />
+      <Parameter name="max time step (s)" type="double" value="1e10" />
+      <Parameter name="min time step (s)" type="double" value="1e-10" />
+      <Parameter name="initial time step (s)" type="double" value="1e-6" />
+      <Parameter name="time step cut threshold" type="int" value="50000" />
+      <Parameter name="time step cut factor" type="double" value="2.0" />
+      <Parameter name="time step increase threshold" type="int" value="4" />
+      <Parameter name="time step increase factor" type="double" value="1.2" />
+      <Parameter name="time step control method" type="string" value="simple" />
+      <Parameter name="number of component concentrations" type="int" value="12" />
+      <ParameterList name="initial condition" type="ParameterList">
+        <ParameterList name="geochemical conditions" type="ParameterList">
+          <ParameterList name="ICsubsurface" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{computational domain}" />
+          </ParameterList>
+        </ParameterList>
+      </ParameterList>
+      <ParameterList name="verbose object" type="ParameterList">
+        <Parameter name="verbosity level" type="string" value="default" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="chemistry surface" type="ParameterList">
+      <Parameter name="PK type" type="string" value="chemistry alquimia" />
+      <Parameter name="engine" type="string" value="PFloTran" />
+      <Parameter name="chemistry model" type="string" value="Alquimia" />
+      <Parameter name="domain name" type="string" value="surface" />
+      <Parameter name="saturation liquid key" type="string" value="surface-ponded_depth" />
+      <Parameter name="engine input file" type="string" value="../reactions/pflotran_chemistry_cybernetic_smoothstep_pyc.txt" />
+      <Parameter name="activity model" type="string" value="unit" />
+      <Parameter name="maximum Newton iterations" type="int" value="1000" />
+      <Parameter name="tolerance" type="double" value="1e-15" />
+      <Parameter name="max time step (s)" type="double" value="1e10" />
+      <Parameter name="min time step (s)" type="double" value="1e-10" />
+      <Parameter name="initial time step (s)" type="double" value="1e-6" />
+      <Parameter name="time step cut threshold" type="int" value="50000" />
+      <Parameter name="time step cut factor" type="double" value="2.0" />
+      <Parameter name="time step increase threshold" type="int" value="4" />
+      <Parameter name="time step increase factor" type="double" value="1.2" />
+      <Parameter name="time step control method" type="string" value="simple" />
+      <Parameter name="number of component concentrations" type="int" value="12" />
+      <ParameterList name="initial condition" type="ParameterList">
+        <ParameterList name="geochemical conditions" type="ParameterList">
+          <ParameterList name="ICsurface" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{surface domain}" />
+          </ParameterList>
+        </ParameterList>
+      </ParameterList>
+      <ParameterList name="verbose object" type="ParameterList">
+        <Parameter name="verbosity level" type="string" value="default" />
+      </ParameterList>
+    </ParameterList>

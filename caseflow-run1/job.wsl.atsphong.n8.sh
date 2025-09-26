@@ -4,8 +4,8 @@
 # Define the directory name
 DIR_NAME="NF01"
 
-# Get the current date in YYYY-MM-DD-HHMMSS format
-DATE=$(date +%Y-%m-%d-%H%M%S)
+# Get the current date in YYMMDD format
+DATE=$(date +%y%m%d)
 
 # Check if the directory exists
 if [ -d "$DIR_NAME" ]; then
@@ -28,5 +28,5 @@ fi
 cd "$DIR_NAME" || { echo "Failed to change directory to '$DIR_NAME'. Exiting."; exit 1; }
 
 # Execute the mpiexec command
-mpiexec -n 8 ats --xml_file=../NF01_nx100_nz18.run0.v1.5.xml >> run0.output
+mpiexec -n 8 ats --xml_file=../NF01_nx100_nz18.run1.vphong.xml >> run1.output
 

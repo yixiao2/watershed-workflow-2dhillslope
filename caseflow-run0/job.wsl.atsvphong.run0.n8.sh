@@ -28,5 +28,5 @@ fi
 cd "$DIR_NAME" || { echo "Failed to change directory to '$DIR_NAME'. Exiting."; exit 1; }
 
 # Execute the mpiexec command
-mpiexec -n 8 ats --xml_file=../NF01_nx100_nz18.run0.v1.5.xml >> run0.output
+mpiexec -n 8 ats --xml_file=../NF01_nx100_nz18.run0.vphong.xml >> run0.output
 

@@ -25,7 +25,7 @@
       <Parameter name="component names" type="Array(string)" value="{C5H7O2N(aq), CH2O(aq), CO2(aq), N2(aq), NH4+, NO2-, NO3-, O2(aq), Tsw, Tgw, Tr, PyC}" />
       <Parameter name="number of liquid components" type="int" value="12" />
       <Parameter name="component molar masses" type="Array(double)" value="{30.0158, 30.0158, 44.0098, 28.0135, 18.0385, 46.0055, 62.0049, 31.9988, 18.0153, 18.0153, 18.0153, 18.0153}" />
-      <Parameter name="component max saturations" type="Array(double)" value="{55e-3,141.9e-3,55e-2,55e-9,55e-9,55e-9,55e-4,165e-3,55e-4,55e-4,55e-4,550e-4}" />
+      <Parameter name="component max concentrations" type="Array(double)" value="{0.001,0.004,0.01,1e-09,0.0001,1e-09,0.001,1e-5,0.0001,0.0001,0.0001,0.001}" />
       <Parameter name="spatial discretization order" type="int" value="1" />
       <Parameter name="temporal discretization order" type="int" value="1" />
       <Parameter name="cfl" type="double" value="1.0" />
@@ -86,6 +86,25 @@
           </ParameterList>
         </ParameterList>
       </ParameterList>
+      <ParameterList name="source terms">
+        <ParameterList name="component mass source">
+          <ParameterList name="DOC production">
+            <Parameter name="component names" type="Array(string)" value="{CH2O(aq)}" />
+            <Parameter name="regions" type="Array(string)" value="{NRCS-68901, NRCS-68932}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <ParameterList name="source function">
+              <Parameter name="function type" type="string" value="bilinear and time" />
+              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DOC_2020_2020_fdom001_2024-07-14-142626.h5" />
+              <Parameter name="time header" type="string" value="time [s]" />
+              <Parameter name="row header" type="string" value="y [m]" />
+              <Parameter name="row coordinate" type="string" value="y" />
+              <Parameter name="column header" type="string" value="x [m]" />
+              <Parameter name="column coordinate" type="string" value="x" />
+              <Parameter name="value header" type="string" value="DOC production [molC m^-3 s^-1]" />
+            </ParameterList>
+          </ParameterList>
+        </ParameterList>
+      </ParameterList>
       <ParameterList name="boundary conditions">
         <ParameterList name="concentration" type="ParameterList">
           <ParameterList name="BC coupling">
@@ -103,7 +122,7 @@
             <Parameter name="component names" type="Array(string)" value="{C5H7O2N(aq)}" />
             <ParameterList name="boundary concentration function">
               <ParameterList name="function-constant">
-                <Parameter name="value" type="double" value="55.0e-5" />
+                <Parameter name="value" type="double" value="1.81818182e-7" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -113,7 +132,7 @@
             <Parameter name="component names" type="Array(string)" value="{C5H7O2N(aq)}" />
             <ParameterList name="boundary concentration function">
               <ParameterList name="function-constant">
-                <Parameter name="value" type="double" value="55.0e-5" />
+                <Parameter name="value" type="double" value="1.81818182e-7" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -123,7 +142,7 @@
             <Parameter name="component names" type="Array(string)" value="{CH2O(aq)}" />
             <ParameterList name="boundary concentration function">
               <ParameterList name="function-constant">
-                <Parameter name="value" type="double" value="141.9e-4" />
+                <Parameter name="value" type="double" value="7.27272727e-7" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -133,27 +152,7 @@
             <Parameter name="component names" type="Array(string)" value="{CH2O(aq)}" />
             <ParameterList name="boundary concentration function">
               <ParameterList name="function-constant">
-                <Parameter name="value" type="double" value="141.9e-6" />
-              </ParameterList>
-            </ParameterList>
-          </ParameterList>
-          <ParameterList name="left_subsurface PyC" type="ParameterList">
-            <Parameter name="regions" type="Array(string)" value="{left_face}" />
-            <Parameter name="spatial distribution method" type="string" value="none" />
-            <Parameter name="component names" type="Array(string)" value="{PyC}" />
-            <ParameterList name="boundary concentration function">
-              <ParameterList name="function-constant">
-                <Parameter name="value" type="double" value="550e-6" />
-              </ParameterList>
-            </ParameterList>
-          </ParameterList>
-          <ParameterList name="right_subsurface PyC" type="ParameterList">
-            <Parameter name="regions" type="Array(string)" value="{right_face}" />
-            <Parameter name="spatial distribution method" type="string" value="none" />
-            <Parameter name="component names" type="Array(string)" value="{PyC}" />
-            <ParameterList name="boundary concentration function">
-              <ParameterList name="function-constant">
-                <Parameter name="value" type="double" value="275e-6" />
+                <Parameter name="value" type="double" value="7.27272727e-7" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -163,7 +162,7 @@
             <Parameter name="component names" type="Array(string)" value="{CO2(aq)}" />
             <ParameterList name="boundary concentration function">
               <ParameterList name="function-constant">
-                <Parameter name="value" type="double" value="55.0e-3" />
+                <Parameter name="value" type="double" value="3.636363e-5" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -173,7 +172,7 @@
             <Parameter name="component names" type="Array(string)" value="{CO2(aq)}" />
             <ParameterList name="boundary concentration function">
               <ParameterList name="function-constant">
-                <Parameter name="value" type="double" value="55.0e-5" />
+                <Parameter name="value" type="double" value="3.636363e-5" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -183,7 +182,7 @@
             <Parameter name="component names" type="Array(string)" value="{N2(aq)}" />
             <ParameterList name="boundary concentration function">
               <ParameterList name="function-constant">
-                <Parameter name="value" type="double" value="55.0e-10" />
+                <Parameter name="value" type="double" value="1.8181818e-12" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -193,7 +192,7 @@
             <Parameter name="component names" type="Array(string)" value="{N2(aq)}" />
             <ParameterList name="boundary concentration function">
               <ParameterList name="function-constant">
-                <Parameter name="value" type="double" value="55.0e-10" />
+                <Parameter name="value" type="double" value="1.8181818e-12" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -203,7 +202,7 @@
             <Parameter name="component names" type="Array(string)" value="{NH4+}" />
             <ParameterList name="boundary concentration function">
               <ParameterList name="function-constant">
-                <Parameter name="value" type="double" value="55.0e-10" />
+                <Parameter name="value" type="double" value="1.8181818e-12" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -213,7 +212,7 @@
             <Parameter name="component names" type="Array(string)" value="{NH4+}" />
             <ParameterList name="boundary concentration function">
               <ParameterList name="function-constant">
-                <Parameter name="value" type="double" value="55.0e-10" />
+                <Parameter name="value" type="double" value="1.8181818e-12" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -223,7 +222,7 @@
             <Parameter name="component names" type="Array(string)" value="{NO2-}" />
             <ParameterList name="boundary concentration function">
               <ParameterList name="function-constant">
-                <Parameter name="value" type="double" value="55.0e-10" />
+                <Parameter name="value" type="double" value="1.8181818e-12" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -233,7 +232,7 @@
             <Parameter name="component names" type="Array(string)" value="{NO2-}" />
             <ParameterList name="boundary concentration function">
               <ParameterList name="function-constant">
-                <Parameter name="value" type="double" value="55.0e-10" />
+                <Parameter name="value" type="double" value="1.8181818e-12" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -243,7 +242,7 @@
             <Parameter name="component names" type="Array(string)" value="{NO3-}" />
             <ParameterList name="boundary concentration function">
               <ParameterList name="function-constant">
-                <Parameter name="value" type="double" value="55.0e-5" />
+                <Parameter name="value" type="double" value="7.27272e-6" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -253,7 +252,7 @@
             <Parameter name="component names" type="Array(string)" value="{NO3-}" />
             <ParameterList name="boundary concentration function">
               <ParameterList name="function-constant">
-                <Parameter name="value" type="double" value="55.0e-5" />
+                <Parameter name="value" type="double" value="7.27272e-6" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -263,7 +262,7 @@
             <Parameter name="component names" type="Array(string)" value="{O2(aq)}" />
             <ParameterList name="boundary concentration function">
               <ParameterList name="function-constant">
-                <Parameter name="value" type="double" value="165.0e-4" />
+                <Parameter name="value" type="double" value="4.85454e-6" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -273,7 +272,7 @@
             <Parameter name="component names" type="Array(string)" value="{O2(aq)}" />
             <ParameterList name="boundary concentration function">
               <ParameterList name="function-constant">
-                <Parameter name="value" type="double" value="165.0e-4" />
+                <Parameter name="value" type="double" value="4.85454e-6" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -283,7 +282,7 @@
             <Parameter name="component names" type="Array(string)" value="{Tsw}" />
             <ParameterList name="boundary concentration function">
               <ParameterList name="function-constant">
-                <Parameter name="value" type="double" value="55e-5" />
+                <Parameter name="value" type="double" value="1.8181818e-22" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -293,7 +292,7 @@
             <Parameter name="component names" type="Array(string)" value="{Tsw}" />
             <ParameterList name="boundary concentration function">
               <ParameterList name="function-constant">
-                <Parameter name="value" type="double" value="55e-5" />
+                <Parameter name="value" type="double" value="1.8181818e-22" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -303,7 +302,7 @@
             <Parameter name="component names" type="Array(string)" value="{Tgw}" />
             <ParameterList name="boundary concentration function">
               <ParameterList name="function-constant">
-                <Parameter name="value" type="double" value="55e-5" />
+                <Parameter name="value" type="double" value="1.81818182e-7" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -313,7 +312,7 @@
             <Parameter name="component names" type="Array(string)" value="{Tgw}" />
             <ParameterList name="boundary concentration function">
               <ParameterList name="function-constant">
-                <Parameter name="value" type="double" value="55e-5" />
+                <Parameter name="value" type="double" value="1.81818182e-7" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -323,7 +322,7 @@
             <Parameter name="component names" type="Array(string)" value="{Tr}" />
             <ParameterList name="boundary concentration function">
               <ParameterList name="function-constant">
-                <Parameter name="value" type="double" value="55e-20" />
+                <Parameter name="value" type="double" value="1.8181818e-22" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -333,7 +332,27 @@
             <Parameter name="component names" type="Array(string)" value="{Tr}" />
             <ParameterList name="boundary concentration function">
               <ParameterList name="function-constant">
-                <Parameter name="value" type="double" value="55e-20" />
+                <Parameter name="value" type="double" value="1.8181818e-22" />
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="left_subsurface PyC" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{left_face}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{PyC}" />
+            <ParameterList name="boundary concentration function">
+              <ParameterList name="function-constant">
+                <Parameter name="value" type="double" value="1.8181818e-22" />
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="right_subsurface PyC" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{right_face}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{PyC}" />
+            <ParameterList name="boundary concentration function">
+              <ParameterList name="function-constant">
+                <Parameter name="value" type="double" value="1.8181818e-22" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -351,7 +370,7 @@
       <Parameter name="component names" type="Array(string)" value="{C5H7O2N(aq), CH2O(aq), CO2(aq), N2(aq), NH4+, NO2-, NO3-, O2(aq), Tsw, Tgw, Tr, PyC}" />
       <Parameter name="number of liquid components" type="int" value="12" />
       <Parameter name="component molar masses" type="Array(double)" value="{30.0158, 30.0158, 44.0098, 28.0135, 18.0385, 46.0055, 62.0049, 31.9988, 18.0153, 18.0153, 18.0153, 18.0153}" />
-      <Parameter name="component max saturations" type="Array(double)" value="{1e-4,2.58e-3,1.12e-2,1e-9,1e-9,1e-9,8.87e-5,3.59e-3,1e-4,1e-4,1e-4,1e-4}" />
+      <Parameter name="component max concentrations" type="Array(double)" value="{0.001,0.004,0.01,1e-09,0.0001,1e-09,0.001,1e-5,0.0001,0.0001,0.0001,0.001}" />
       <Parameter name="spatial discretization order" type="int" value="1" />
       <Parameter name="temporal discretization order" type="int" value="1" />
       <Parameter name="cfl" type="double" value="1.0" />

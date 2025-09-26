@@ -26,3 +26,6 @@ cp -r ../OakCreek_ATS_2D_cleaned/caseflow-run2 ./
 # prepare folders for case ats-pflotran run1/run2
 cp -r ../OakCreek_ATS_2D_cleaned/casecybernetic-run1 ./
 cp -r ../OakCreek_ATS_2D_cleaned/casecybernetic-run2 ./
+
+# copy atspflotranutils
+cp -r ../OakCreek_ATS_2D_cleaned/atspflotranutils ./

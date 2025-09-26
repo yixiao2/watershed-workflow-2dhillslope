@@ -4,8 +4,8 @@
 # Define the directory name
 DIR_NAME="NF01"
 
-# Get the current date in YYMMDD format
-DATE=$(date +%y%m%d)
+# Get the current date in YYYY-MM-DD-HHMMSS format
+DATE=$(date +%Y-%m-%d-%H%M%S)
 
 # Check if the directory exists
 if [ -d "$DIR_NAME" ]; then

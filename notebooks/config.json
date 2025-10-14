@@ -1,10 +1,17 @@
 {
-  "start_year": 2020,
-  "end_year": 2020,
-  "_comment_years": "Specify the range of years for simulation",
-    
-  "nyears_cyclic_steadystate": 10,
-  "_comment_nyears_cyclic": "Number of years to simulate steady-state cyclic spinup.",
+  "start_year_spinup": 2011,
+  "end_year_spinup": 2015,
+  "_comment_startend_year_spinup": "Specify the spinup simulation time range from start_year_spinup/1/1 to end_year_spinup/12/31",
+
+  "nyears_steadystate_spinup": 10,
+  "_comment_nyears_steadystate_spinup": "Number of years to run steadystate spinup",
+
+  "nyears_cyclic_spinup": 10,
+  "_comment_nyears_cyclic_spinup": "Number of years to run cyclic spinup.",
+
+  "start_year_transient":2016,
+  "end_year_transient": 2020,
+  "_comment_startend_year_transient": "Specify the transient simulation time range from start_year_spinup/1/1 to end_year_spinup/12/31",
     
   "watershed_name": "OakCreek",
   "hucs": "170300020307",

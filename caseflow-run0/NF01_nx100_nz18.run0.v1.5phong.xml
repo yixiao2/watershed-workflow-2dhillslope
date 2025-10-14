@@ -222,13 +222,13 @@
         <ParameterList name="timestep controller smarter parameters">
           <Parameter name="max iterations" type="int" value="18" />
           <Parameter name="min iterations" type="int" value="7" />
-          <Parameter name="time step reduction factor" type="double" value="0.75" />
-          <Parameter name="time step increase factor" type="double" value="1.25" />
-          <Parameter name="max time step" type="double" value="10000000000" />
-          <Parameter name="min time step" type="double" value="1.04e-10" />
+          <Parameter name="timestep reduction factor" type="double" value="0.75" />
+          <Parameter name="timestep increase factor" type="double" value="1.25" />
+          <Parameter name="max timestep" type="double" value="10000000000" />
+          <Parameter name="min timestep" type="double" value="1.04e-10" />
           <Parameter name="growth wait after fail" type="int" value="2" />
           <Parameter name="count before increasing increase factor" type="int" value="2" />
-          <Parameter name="initial time step [s]" type="double" value=" 5" />
+          <Parameter name="initial timestep [s]" type="double" value=" 5" />
         </ParameterList>
       </ParameterList>
 

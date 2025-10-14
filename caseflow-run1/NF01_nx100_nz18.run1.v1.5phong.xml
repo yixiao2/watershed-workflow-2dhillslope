@@ -169,7 +169,7 @@
   <ParameterList name="cycle driver" type="ParameterList">
     <Parameter name="start time" type="double" value=" 0" />
     <Parameter name="start time units" type="string" value="d" />
-    <Parameter name="end time" type="double" value="1825" />
+    <Parameter name="end time" type="double" value="3650" />
     <Parameter name="end time units" type="string" value="d" />
     <Parameter name="end cycle" type="int" value="100000" />
     <Parameter name="max time step size [s]" type="double" value="86400" />
@@ -217,7 +217,7 @@
       <Parameter name="modify predictor positivity preserving" type="bool" value="true" />
       <Parameter name="debug cells" type="Array(int)" value="{0}" />
       <ParameterList name="initial condition" type="ParameterList">
-        <Parameter name="restart file" type="string" value="../../caseflow-run1/NF01/checkpoint_final.h5" />
+        <Parameter name="value" type="double" value=" 0" />
       </ParameterList>
 
       <ParameterList name="inverse" type="ParameterList">
@@ -241,13 +241,13 @@
         <ParameterList name="timestep controller smarter parameters" type="ParameterList">
           <Parameter name="max iterations" type="int" value="18" />
           <Parameter name="min iterations" type="int" value="10" />
-          <Parameter name="time step reduction factor" type="double" value="0.5" />
-          <Parameter name="time step increase factor" type="double" value=" 2" />
-          <Parameter name="max time step" type="double" value="10000000" />
-          <Parameter name="min time step" type="double" value="1e-10" />
+          <Parameter name="timestep reduction factor" type="double" value="0.5" />
+          <Parameter name="timestep increase factor" type="double" value=" 2" />
+          <Parameter name="max timestep" type="double" value="10000000" />
+          <Parameter name="min timestep" type="double" value="1e-10" />
           <Parameter name="growth wait after fail" type="int" value="2" />
           <Parameter name="count before increasing increase factor" type="int" value="2" />
-          <Parameter name="initial time step [s]" type="double" value="86400" />
+          <Parameter name="initial timestep [s]" type="double" value="86400" />
         </ParameterList>
       </ParameterList>
 
@@ -264,7 +264,7 @@
       <Parameter name="modify predictor positivity preserving" type="bool" value="true" />
       <Parameter name="debug cells" type="Array(int)" value="{0}" />
       <ParameterList name="initial condition" type="ParameterList">
-        <Parameter name="restart file" type="string" value="../../caseflow-run1/NF01/checkpoint_final.h5" />
+        <Parameter name="value" type="double" value=" 0" />
       </ParameterList>
 
       <ParameterList name="inverse" type="ParameterList">
@@ -288,13 +288,13 @@
         <ParameterList name="timestep controller smarter parameters" type="ParameterList">
           <Parameter name="max iterations" type="int" value="18" />
           <Parameter name="min iterations" type="int" value="10" />
-          <Parameter name="time step reduction factor" type="double" value="0.5" />
-          <Parameter name="time step increase factor" type="double" value=" 2" />
-          <Parameter name="max time step" type="double" value="10000000" />
-          <Parameter name="min time step" type="double" value="1e-10" />
+          <Parameter name="timestep reduction factor" type="double" value="0.5" />
+          <Parameter name="timestep increase factor" type="double" value=" 2" />
+          <Parameter name="max timestep" type="double" value="10000000" />
+          <Parameter name="min timestep" type="double" value="1e-10" />
           <Parameter name="growth wait after fail" type="int" value="2" />
           <Parameter name="count before increasing increase factor" type="int" value="2" />
-          <Parameter name="initial time step [s]" type="double" value="86400" />
+          <Parameter name="initial timestep [s]" type="double" value="86400" />
         </ParameterList>
       </ParameterList>
 
@@ -337,13 +337,13 @@
         <ParameterList name="timestep controller smarter parameters" type="ParameterList">
           <Parameter name="max iterations" type="int" value="18" />
           <Parameter name="min iterations" type="int" value="10" />
-          <Parameter name="time step reduction factor" type="double" value="0.5" />
-          <Parameter name="time step increase factor" type="double" value=" 2" />
-          <Parameter name="max time step" type="double" value="10000000" />
-          <Parameter name="min time step" type="double" value="1e-10" />
+          <Parameter name="timestep reduction factor" type="double" value="0.5" />
+          <Parameter name="timestep increase factor" type="double" value=" 2" />
+          <Parameter name="max timestep" type="double" value="10000000" />
+          <Parameter name="min timestep" type="double" value="1e-10" />
           <Parameter name="growth wait after fail" type="int" value="2" />
           <Parameter name="count before increasing increase factor" type="int" value="2" />
-          <Parameter name="initial time step [s]" type="double" value="86400" />
+          <Parameter name="initial timestep [s]" type="double" value="86400" />
         </ParameterList>
       </ParameterList>
 
@@ -372,7 +372,7 @@
             <Parameter name="regions" type="Array(string)" value="{left_face}" />
             <ParameterList name="boundary head" type="ParameterList">
               <ParameterList name="function-tabular" type="ParameterList">
-                <Parameter name="file" type="string" value="../../data-processed/NF01/startpt_head_2016-01-01_2020-12-31.h5" />
+                <Parameter name="file" type="string" value="../../data-processed/NF01/startpt_head_10y_typical.h5" />
                 <Parameter name="x header" type="string" value="Time" />
                 <Parameter name="y header" type="string" value="startpt_head" />
                 <Parameter name="form" type="Array(string)" value="{linear}" />
@@ -383,7 +383,7 @@
             <Parameter name="regions" type="Array(string)" value="{right_face}" />
             <ParameterList name="boundary head" type="ParameterList">
               <ParameterList name="function-tabular" type="ParameterList">
-                <Parameter name="file" type="string" value="../../data-processed/NF01/endpt_head_2016-01-01_2020-12-31.h5" />
+                <Parameter name="file" type="string" value="../../data-processed/NF01/endpt_head_10y_typical.h5" />
                 <Parameter name="x header" type="string" value="Time" />
                 <Parameter name="y header" type="string" value="endpt_head" />
                 <Parameter name="form" type="Array(string)" value="{linear}" />
@@ -394,7 +394,7 @@
       </ParameterList>
 
       <ParameterList name="initial condition" type="ParameterList">
-        <Parameter name="restart file" type="string" value="../../caseflow-run1/NF01/checkpoint_final.h5" />
+        <Parameter name="restart file" type="string" value="../../caseflow-run0/NF01/checkpoint_final.h5" />
       </ParameterList>
 
     </ParameterList>
@@ -420,7 +420,7 @@
             <Parameter name="regions" type="Array(string)" value="{surface left}" />
             <ParameterList name="boundary head" type="ParameterList">
               <ParameterList name="function-tabular" type="ParameterList">
-                <Parameter name="file" type="string" value="../../data-processed/NF01/startpt_head_2016-01-01_2020-12-31.h5" />
+                <Parameter name="file" type="string" value="../../data-processed/NF01/startpt_head_10y_typical.h5" />
                 <Parameter name="x header" type="string" value="Time" />
                 <Parameter name="y header" type="string" value="startpt_head" />
                 <Parameter name="form" type="Array(string)" value="{linear}" />
@@ -431,7 +431,7 @@
             <Parameter name="regions" type="Array(string)" value="{surface right}" />
             <ParameterList name="boundary head" type="ParameterList">
               <ParameterList name="function-tabular" type="ParameterList">
-                <Parameter name="file" type="string" value="../../data-processed/NF01/endpt_head_2016-01-01_2020-12-31.h5" />
+                <Parameter name="file" type="string" value="../../data-processed/NF01/endpt_head_10y_typical.h5" />
                 <Parameter name="x header" type="string" value="Time" />
                 <Parameter name="y header" type="string" value="endpt_head" />
                 <Parameter name="form" type="Array(string)" value="{linear}" />
@@ -442,7 +442,7 @@
       </ParameterList>
 
       <ParameterList name="initial condition" type="ParameterList">
-        <Parameter name="restart file" type="string" value="../../caseflow-run1/NF01/checkpoint_final.h5" />
+        <Parameter name="initialize surface head from subsurface" type="bool" value="true" />
       </ParameterList>
 
     </ParameterList>
@@ -663,7 +663,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <Parameter name="function type" type="string" value="tabular" />
-              <Parameter name="file" type="string" value="../../data-processed/OakCreek/OakCreek_MODIS_LAI_2016-1-1_2021-1-1_smoothed.h5" />
+              <Parameter name="file" type="string" value="../../data-processed/OakCreek/OakCreek_MODIS_LAI_typical10yr_2011_2015.h5" />
               <Parameter name="x header" type="string" value="time [s]" />
               <Parameter name="y header" type="string" value="NLCD Evergreen Forest LAI [-]" />
             </ParameterList>
@@ -673,7 +673,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <Parameter name="function type" type="string" value="tabular" />
-              <Parameter name="file" type="string" value="../../data-processed/OakCreek/OakCreek_MODIS_LAI_2016-1-1_2021-1-1_smoothed.h5" />
+              <Parameter name="file" type="string" value="../../data-processed/OakCreek/OakCreek_MODIS_LAI_typical10yr_2011_2015.h5" />
               <Parameter name="x header" type="string" value="time [s]" />
               <Parameter name="y header" type="string" value="NLCD Shrub Scrub LAI [-]" />
             </ParameterList>
@@ -695,7 +695,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <Parameter name="function type" type="string" value="bilinear and time" />
-              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_2016_2020.h5" />
+              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_typical10yr_2011_2015.h5" />
               <Parameter name="time header" type="string" value="time [s]" />
               <Parameter name="row header" type="string" value="y [m]" />
               <Parameter name="row coordinate" type="string" value="y" />
@@ -717,7 +717,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <Parameter name="function type" type="string" value="bilinear and time" />
-              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_2016_2020.h5" />
+              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_typical10yr_2011_2015.h5" />
               <Parameter name="time header" type="string" value="time [s]" />
               <Parameter name="row header" type="string" value="y [m]" />
               <Parameter name="row coordinate" type="string" value="y" />
@@ -736,7 +736,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <Parameter name="function type" type="string" value="bilinear and time" />
-              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_2016_2020.h5" />
+              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_typical10yr_2011_2015.h5" />
               <Parameter name="time header" type="string" value="time [s]" />
               <Parameter name="row header" type="string" value="y [m]" />
               <Parameter name="row coordinate" type="string" value="y" />
@@ -755,7 +755,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <Parameter name="function type" type="string" value="bilinear and time" />
-              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_2016_2020.h5" />
+              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_typical10yr_2011_2015.h5" />
               <Parameter name="time header" type="string" value="time [s]" />
               <Parameter name="row header" type="string" value="y [m]" />
               <Parameter name="row coordinate" type="string" value="y" />
@@ -774,7 +774,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <Parameter name="function type" type="string" value="bilinear and time" />
-              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_2016_2020.h5" />
+              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_typical10yr_2011_2015.h5" />
               <Parameter name="time header" type="string" value="time [s]" />
               <Parameter name="row header" type="string" value="y [m]" />
               <Parameter name="row coordinate" type="string" value="y" />
@@ -795,7 +795,7 @@
               <Parameter name="function type" type="string" value="composition" />
               <ParameterList name="function1" type="ParameterList">
                 <Parameter name="function type" type="string" value="bilinear and time" />
-                <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_2016_2020.h5" />
+                <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_typical10yr_2011_2015.h5" />
                 <Parameter name="time header" type="string" value="time [s]" />
                 <Parameter name="row header" type="string" value="y [m]" />
                 <Parameter name="row coordinate" type="string" value="y" />

@@ -167,9 +167,9 @@
   </ParameterList>
 
   <ParameterList name="cycle driver" type="ParameterList">
-    <Parameter name="start time" type="double" value="274" />
+    <Parameter name="start time" type="double" value=" 0" />
     <Parameter name="start time units" type="string" value="d" />
-    <Parameter name="end time" type="double" value="3559" />
+    <Parameter name="end time" type="double" value="3650" />
     <Parameter name="end time units" type="string" value="d" />
     <Parameter name="end cycle" type="int" value="100000" />
     <Parameter name="max time step size [s]" type="double" value="86400" />
@@ -663,7 +663,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <Parameter name="function type" type="string" value="tabular" />
-              <Parameter name="file" type="string" value="../../data-processed/OakCreek/OakCreek_MODIS_LAI_typical10yr_2013_2023.h5" />
+              <Parameter name="file" type="string" value="../../data-processed/OakCreek/OakCreek_MODIS_LAI_typical10yr_2011_2015.h5" />
               <Parameter name="x header" type="string" value="time [s]" />
               <Parameter name="y header" type="string" value="NLCD Evergreen Forest LAI [-]" />
             </ParameterList>
@@ -673,7 +673,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <Parameter name="function type" type="string" value="tabular" />
-              <Parameter name="file" type="string" value="../../data-processed/OakCreek/OakCreek_MODIS_LAI_typical10yr_2013_2023.h5" />
+              <Parameter name="file" type="string" value="../../data-processed/OakCreek/OakCreek_MODIS_LAI_typical10yr_2011_2015.h5" />
               <Parameter name="x header" type="string" value="time [s]" />
               <Parameter name="y header" type="string" value="NLCD Shrub Scrub LAI [-]" />
             </ParameterList>
@@ -695,7 +695,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <Parameter name="function type" type="string" value="bilinear and time" />
-              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_typical10yr_2013_2023.h5" />
+              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_typical10yr_2011_2015.h5" />
               <Parameter name="time header" type="string" value="time [s]" />
               <Parameter name="row header" type="string" value="y [m]" />
               <Parameter name="row coordinate" type="string" value="y" />
@@ -717,7 +717,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <Parameter name="function type" type="string" value="bilinear and time" />
-              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_typical10yr_2013_2023.h5" />
+              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_typical10yr_2011_2015.h5" />
               <Parameter name="time header" type="string" value="time [s]" />
               <Parameter name="row header" type="string" value="y [m]" />
               <Parameter name="row coordinate" type="string" value="y" />
@@ -736,7 +736,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <Parameter name="function type" type="string" value="bilinear and time" />
-              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_typical10yr_2013_2023.h5" />
+              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_typical10yr_2011_2015.h5" />
               <Parameter name="time header" type="string" value="time [s]" />
               <Parameter name="row header" type="string" value="y [m]" />
               <Parameter name="row coordinate" type="string" value="y" />
@@ -755,7 +755,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <Parameter name="function type" type="string" value="bilinear and time" />
-              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_typical10yr_2013_2023.h5" />
+              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_typical10yr_2011_2015.h5" />
               <Parameter name="time header" type="string" value="time [s]" />
               <Parameter name="row header" type="string" value="y [m]" />
               <Parameter name="row coordinate" type="string" value="y" />
@@ -774,7 +774,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <Parameter name="function type" type="string" value="bilinear and time" />
-              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_typical10yr_2013_2023.h5" />
+              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_typical10yr_2011_2015.h5" />
               <Parameter name="time header" type="string" value="time [s]" />
               <Parameter name="row header" type="string" value="y [m]" />
               <Parameter name="row coordinate" type="string" value="y" />
@@ -795,7 +795,7 @@
               <Parameter name="function type" type="string" value="composition" />
               <ParameterList name="function1" type="ParameterList">
                 <Parameter name="function type" type="string" value="bilinear and time" />
-                <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_typical10yr_2013_2023.h5" />
+                <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_typical10yr_2011_2015.h5" />
                 <Parameter name="time header" type="string" value="time [s]" />
                 <Parameter name="row header" type="string" value="y [m]" />
                 <Parameter name="row coordinate" type="string" value="y" />
@@ -1113,12 +1113,12 @@
   </ParameterList>
   <ParameterList name="visualization">
     <ParameterList name="domain" type="ParameterList">
-      <Parameter name="times start period stop" type="Array(double)" value="{274, 1,-1}" />
+      <Parameter name="times start period stop" type="Array(double)" value="{ 0, 1,-1}" />
       <Parameter name="times start period stop units" type="string" value="d" />
       <Parameter name="time units" type="string" value="d" />
     </ParameterList>
     <ParameterList name="surface" type="ParameterList">
-      <Parameter name="times start period stop" type="Array(double)" value="{274, 1,-1}" />
+      <Parameter name="times start period stop" type="Array(double)" value="{ 0, 1,-1}" />
       <Parameter name="times start period stop units" type="string" value="d" />
       <Parameter name="time units" type="string" value="d" />
       <Parameter name="aliased domains" type="Array(string)" value="{snow,canopy}" />
@@ -1160,7 +1160,7 @@
           <Parameter name="functional" type="string" value="extensive integral" />
           <Parameter name="location name" type="string" value="cell" />
         </ParameterList>
-        <ParameterList name="runoff generation [mol d^-1]" type="ParameterList">
+        <ParameterList name="runoff generation [mol per time interval]" type="ParameterList">
           <Parameter name="variable" type="string" value="surface-water_flux" />
           <Parameter name="direction normalized flux" type="bool" value="true" />
           <Parameter name="region" type="string" value="surface boundary" />
@@ -1168,98 +1168,114 @@
           <Parameter name="location name" type="string" value="face" />
           <Parameter name="time integrated" type="bool" value="true" />
         </ParameterList>
-        <ParameterList name="evapotranspiration [m d^-1]" type="ParameterList">
+        <ParameterList name="evapotranspiration [m per time interval]" type="ParameterList">
           <Parameter name="variable" type="string" value="surface-total_evapotranspiration" />
           <Parameter name="region" type="string" value="surface domain" />
           <Parameter name="functional" type="string" value="average" />
           <Parameter name="location name" type="string" value="cell" />
           <Parameter name="time integrated" type="bool" value="true" />
         </ParameterList>
-        <ParameterList name="snow precipitation [m d^-1]" type="ParameterList">
+        <ParameterList name="snow precipitation [m per time interval]" type="ParameterList">
           <Parameter name="variable" type="string" value="snow-precipitation" />
           <Parameter name="region" type="string" value="surface domain" />
           <Parameter name="functional" type="string" value="average" />
           <Parameter name="location name" type="string" value="cell" />
           <Parameter name="time integrated" type="bool" value="true" />
         </ParameterList>
-        <ParameterList name="rain precipitation [m d^-1]" type="ParameterList">
+        <ParameterList name="rain precipitation [m per time interval]" type="ParameterList">
           <Parameter name="variable" type="string" value="surface-precipitation_rain" />
           <Parameter name="region" type="string" value="surface domain" />
           <Parameter name="functional" type="string" value="average" />
           <Parameter name="location name" type="string" value="cell" />
           <Parameter name="time integrated" type="bool" value="true" />
         </ParameterList>
-        <ParameterList name="canopy evaporation [m d^-1]" type="ParameterList">
+        <ParameterList name="canopy evaporation [m per time interval]" type="ParameterList">
           <Parameter name="variable" type="string" value="canopy-evaporation" />
           <Parameter name="region" type="string" value="surface domain" />
           <Parameter name="functional" type="string" value="average" />
           <Parameter name="location name" type="string" value="cell" />
           <Parameter name="time integrated" type="bool" value="true" />
         </ParameterList>
-        <ParameterList name="canopy drainage [m d^-1]" type="ParameterList">
+        <ParameterList name="canopy drainage [m per time interval]" type="ParameterList">
           <Parameter name="variable" type="string" value="canopy-drainage" />
           <Parameter name="region" type="string" value="surface domain" />
           <Parameter name="functional" type="string" value="average" />
           <Parameter name="location name" type="string" value="cell" />
           <Parameter name="time integrated" type="bool" value="true" />
         </ParameterList>
-        <ParameterList name="canopy interception [m d^-1]" type="ParameterList">
+        <ParameterList name="canopy interception [m per time interval]" type="ParameterList">
           <Parameter name="variable" type="string" value="canopy-interception" />
           <Parameter name="region" type="string" value="surface domain" />
           <Parameter name="functional" type="string" value="average" />
           <Parameter name="location name" type="string" value="cell" />
           <Parameter name="time integrated" type="bool" value="true" />
         </ParameterList>
-        <ParameterList name="snow evaporation [m d^-1]" type="ParameterList">
+        <ParameterList name="snow evaporation [m per time interval]" type="ParameterList">
           <Parameter name="variable" type="string" value="snow-evaporation" />
           <Parameter name="region" type="string" value="surface domain" />
           <Parameter name="functional" type="string" value="average" />
           <Parameter name="location name" type="string" value="cell" />
           <Parameter name="time integrated" type="bool" value="true" />
         </ParameterList>
-        <ParameterList name="snowmelt [m d^-1]" type="ParameterList">
+        <ParameterList name="snowmelt [m per time interval]" type="ParameterList">
           <Parameter name="variable" type="string" value="snow-melt" />
           <Parameter name="region" type="string" value="surface domain" />
           <Parameter name="functional" type="string" value="average" />
           <Parameter name="location name" type="string" value="cell" />
           <Parameter name="time integrated" type="bool" value="true" />
         </ParameterList>
-        <ParameterList name="snow throughfall + canopy drainage [m d^-1]" type="ParameterList">
+        <ParameterList name="snow throughfall + canopy drainage [m per time interval]" type="ParameterList">
           <Parameter name="variable" type="string" value="canopy-throughfall_drainage_snow" />
           <Parameter name="region" type="string" value="surface domain" />
           <Parameter name="functional" type="string" value="average" />
           <Parameter name="location name" type="string" value="cell" />
           <Parameter name="time integrated" type="bool" value="true" />
         </ParameterList>
-        <ParameterList name="surface evaporation [m d^-1]" type="ParameterList">
+        <ParameterList name="surface evaporation [m per time interval]" type="ParameterList">
           <Parameter name="variable" type="string" value="surface-evaporation" />
           <Parameter name="region" type="string" value="surface domain" />
           <Parameter name="functional" type="string" value="average" />
           <Parameter name="location name" type="string" value="cell" />
           <Parameter name="time integrated" type="bool" value="true" />
         </ParameterList>
-        <ParameterList name="water throughfall + canopy drainage [m d^-1]" type="ParameterList">
+        <ParameterList name="water throughfall + canopy drainage [m per time interval]" type="ParameterList">
           <Parameter name="variable" type="string" value="canopy-throughfall_drainage_rain" />
           <Parameter name="region" type="string" value="surface domain" />
           <Parameter name="functional" type="string" value="average" />
           <Parameter name="location name" type="string" value="cell" />
           <Parameter name="time integrated" type="bool" value="true" />
         </ParameterList>
-        <ParameterList name="transpiration [m d^-1]" type="ParameterList">
+        <ParameterList name="transpiration [m per time interval]" type="ParameterList">
           <Parameter name="variable" type="string" value="surface-transpiration" />
           <Parameter name="region" type="string" value="surface domain" />
           <Parameter name="functional" type="string" value="average" />
           <Parameter name="location name" type="string" value="cell" />
           <Parameter name="time integrated" type="bool" value="true" />
         </ParameterList>
-        <ParameterList name="exfiltration [mol d^-1]" type="ParameterList">
+        <ParameterList name="exfiltration [mol per time interval]" type="ParameterList">
           <Parameter name="variable" type="string" value="surface-surface_subsurface_flux" />
           <Parameter name="region" type="string" value="surface domain" />
           <Parameter name="functional" type="string" value="extensive integral" />
           <Parameter name="location name" type="string" value="cell" />
           <Parameter name="time integrated" type="bool" value="true" />
         </ParameterList>
-        <ParameterList name="right face flux" type="ParameterList">
+        <ParameterList name="surface right boundary [mol per time interval]" type="ParameterList">
+          <Parameter name="variable" type="string" value="surface-water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="surface right" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="surface left boundary [mol per time interval]" type="ParameterList">
+          <Parameter name="variable" type="string" value="surface-water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="surface left" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="right face flux [mol per time interval]" type="ParameterList">
           <Parameter name="variable" type="string" value="water_flux" />
           <Parameter name="direction normalized flux" type="bool" value="true" />
           <Parameter name="region" type="string" value="right_face" />
@@ -1267,7 +1283,7 @@
           <Parameter name="location name" type="string" value="face" />
           <Parameter name="time integrated" type="bool" value="true" />
         </ParameterList>
-        <ParameterList name="left face flux" type="ParameterList">
+        <ParameterList name="left face flux [mol per time interval]" type="ParameterList">
           <Parameter name="variable" type="string" value="water_flux" />
           <Parameter name="direction normalized flux" type="bool" value="true" />
           <Parameter name="region" type="string" value="left_face" />
@@ -1275,7 +1291,7 @@
           <Parameter name="location name" type="string" value="face" />
           <Parameter name="time integrated" type="bool" value="true" />
         </ParameterList>
-        <ParameterList name="bottom face flux" type="ParameterList">
+        <ParameterList name="bottom face flux [mol per time interval]" type="ParameterList">
           <Parameter name="variable" type="string" value="water_flux" />
           <Parameter name="direction normalized flux" type="bool" value="true" />
           <Parameter name="region" type="string" value="bottom" />
@@ -1283,7 +1299,7 @@
           <Parameter name="location name" type="string" value="face" />
           <Parameter name="time integrated" type="bool" value="true" />
         </ParameterList>
-        <ParameterList name="top face flux" type="ParameterList">
+        <ParameterList name="top face flux [mol per time interval]" type="ParameterList">
           <Parameter name="variable" type="string" value="water_flux" />
           <Parameter name="direction normalized flux" type="bool" value="true" />
           <Parameter name="region" type="string" value="surface" />
@@ -1291,7 +1307,7 @@
           <Parameter name="location name" type="string" value="face" />
           <Parameter name="time integrated" type="bool" value="true" />
         </ParameterList>
-        <ParameterList name="top face flux 2" type="ParameterList">
+        <ParameterList name="top face flux 2 [mol per time interval]" type="ParameterList">
           <Parameter name="variable" type="string" value="water_flux" />
           <Parameter name="direction normalized flux" type="bool" value="true" />
           <Parameter name="direction normalized flux vector" type="Array(double)" value="{ 0, 0, 1}" />
@@ -1300,7 +1316,7 @@
           <Parameter name="location name" type="string" value="face" />
           <Parameter name="time integrated" type="bool" value="true" />
         </ParameterList>
-        <ParameterList name="front face flux" type="ParameterList">
+        <ParameterList name="front face flux [mol per time interval]" type="ParameterList">
           <Parameter name="variable" type="string" value="water_flux" />
           <Parameter name="direction normalized flux" type="bool" value="true" />
           <Parameter name="region" type="string" value="front_face" />
@@ -1308,7 +1324,7 @@
           <Parameter name="location name" type="string" value="face" />
           <Parameter name="time integrated" type="bool" value="true" />
         </ParameterList>
-        <ParameterList name="back face flux" type="ParameterList">
+        <ParameterList name="back face flux [mol per time interval]" type="ParameterList">
           <Parameter name="variable" type="string" value="water_flux" />
           <Parameter name="direction normalized flux" type="bool" value="true" />
           <Parameter name="region" type="string" value="back_face" />

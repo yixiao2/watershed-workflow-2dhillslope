@@ -1,5 +1,6 @@
 # ignore all files inside ./notebooks/OakCreek_from_sundar
 notebooks/OakCreek_from_sundar/**
+!notebooks/OakCreek_from_sundar/get_pthead_from_coarseats.ipynb
 
 # ignore all files inside ./notebooks/MODIS_raw
 notebooks/MODIS_raw/**
@@ -9,6 +10,11 @@ notebooks/images/**
 
 # ignore all files inside ./notebooks/ELM_from_huilin
 notebooks/ELM_from_huilin/**
+!notebooks/ELM_from_huilin/*.ipynb
+!notebooks/ELM_from_huilin/readme_about_elm.txt
+!notebooks/ELM_from_huilin/raw_data_on_NERSC.txt
+!notebooks/ELM_from_huilin/WBD_xyz/
+!notebooks/ELM_from_huilin/WBD_xyz/**
 
 # ignore all files inside ./notebooks/data
 notebooks/data/**

@@ -38,7 +38,7 @@
       K3    84.78d0 1/d
       Ka3   0.001d0 mM
       Kd3   0.25d0 mM
-      Kdeg  0.242d0 1/d
+      Kdeg  0.0d0 1/d
       MOBILE_BIOMASS
       REFERENCE_TEMPERATURE 25.d0 ! degrees C
       ACTIVATION_ENERGY 89.d-3 kJ/mol  ! 89.d0 J/mol
@@ -103,6 +103,6 @@ CONSTRAINT ICsurface
     Tsw 1e-05 T 
     Tgw 1e-20 T 
     Tr 1e-20 T 
-    PyC 1e-05 T 
+    PyC 1e-20 T 
   /
 /

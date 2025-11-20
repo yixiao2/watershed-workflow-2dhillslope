@@ -59,50 +59,50 @@
 CONSTRAINT ICsubsurface
   CONCENTRATIONS
     C5H7O2N(aq) 1e-05 T 
-    CH2O(aq) 4.16e-05 T 
+    CH2O(aq) 2.0e-04 T 
     CO2(aq) 2.48e-03 T 
     N2(aq) 1e-10 T 
-    NH4+ 1e-10 T 
+    NH4+ 1e-20 T 
     NO2- 1e-10 T 
-    NO3- 3.96e-04 T 
+    NO3- 1e-20 T 
     O2(aq) 2.67e-04 T
-    Tsw 1e-20 T 
+    Tsw 1e-10 T 
     Tgw 1e-05 T 
-    Tr 1e-20 T 
+    Tr 1e-10 T 
     PyC 1e-10 T 
   /
 /
   
 CONSTRAINT BCrain
   CONCENTRATIONS
-    C5H7O2N(aq) 1e-05 T 
-    CH2O(aq) 2.58e-04 T 
-    CO2(aq) 1.12e-03 T 
+    C5H7O2N(aq) 1e-10 T 
+    CH2O(aq) 1e-10 T 
+    CO2(aq) 2.48e-03 T 
     N2(aq) 1e-10 T 
     NH4+ 1e-10 T 
     NO2- 1e-10 T 
-    NO3- 8.87e-06 T
-    O2(aq) 3.59e-04 T
-    Tsw 1e-20 T 
-    Tgw 1e-20 T 
+    NO3- 1e-10 T
+    O2(aq) 2.67e-04 T
+    Tsw 1e-10 T 
+    Tgw 1e-10 T 
     Tr 1e-05 T 
-    PyC 1e-20 T 
+    PyC 1e-10 T 
   /
 /
 
 CONSTRAINT ICsurface
   CONCENTRATIONS
     C5H7O2N(aq) 1e-05 T 
-    CH2O(aq) 2.58e-04 T 
-    CO2(aq) 1.12e-03 T 
+    CH2O(aq) 2.0e-04 T 
+    CO2(aq) 2.48e-03 T 
     N2(aq) 1e-10 T 
-    NH4+ 1e-10 T 
+    NH4+ 1e-20 T 
     NO2- 1e-10 T 
-    NO3- 8.87e-06 T
-    O2(aq) 3.59e-04 T
+    NO3- 1e-20 T
+    O2(aq) 2.67e-04 T
     Tsw 1e-05 T 
-    Tgw 1e-20 T 
-    Tr 1e-20 T 
-    PyC 1e-20 T 
+    Tgw 1e-10 T 
+    Tr 1e-10 T 
+    PyC 1e-10 T 
   /
 /

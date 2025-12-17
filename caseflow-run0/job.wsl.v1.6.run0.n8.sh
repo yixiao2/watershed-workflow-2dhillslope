@@ -1,11 +1,11 @@
 #!/bin/bash
-#source ~/set_ww_env/ww-1.5.wsl.25feb.sh
+#source set_ats_env/ats-master.wsl.251124.sh
 
 # Define the directory name
 DIR_NAME="NF01"
 
-# Get the current date in YYMMDD format
-DATE=$(date +%y%m%d)
+# Get the current date in YYYY-MM-DD-HHMMSS format
+DATE=$(date +%Y-%m-%d-%H%M%S)
 
 # Check if the directory exists
 if [ -d "$DIR_NAME" ]; then
@@ -28,5 +28,5 @@ fi
 cd "$DIR_NAME" || { echo "Failed to change directory to '$DIR_NAME'. Exiting."; exit 1; }
 
 # Execute the mpiexec command
-mpiexec -n 8 ats --xml_file=../NF01_nx100_nz18.run1.v1.5phong.xml >> run1.output
+mpiexec -n 8 ats --xml_file=../NF01_nx100_nz18.run0.v1.6.xml >> run0.output
 

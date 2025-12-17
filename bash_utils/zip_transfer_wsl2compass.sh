@@ -1,0 +1,1 @@
+zip -rq transfer.zip caseflow-run{0..2} casecybernetic-run1.s{1..5} data-processed

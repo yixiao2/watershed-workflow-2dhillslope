@@ -1,5 +1,5 @@
 #!/bin/bash
-#source ~/set_ww_env/ww-1.5.wsl.25feb.sh
+#source set_ats_env/ats-master.wsl.251124.sh
 
 # Define the directory name
 DIR_NAME="NF01"
@@ -28,5 +28,5 @@ fi
 cd "$DIR_NAME" || { echo "Failed to change directory to '$DIR_NAME'. Exiting."; exit 1; }
 
 # Execute the mpiexec command
-mpiexec -n 8 ats --xml_file=../NF01_nx100_nz18.run2.v1.5phong.xml >> run2.output
+mpiexec -n 8 ats --xml_file=../NF01_nx100_nz18.run2.v1.6.xml >> run2.output
 

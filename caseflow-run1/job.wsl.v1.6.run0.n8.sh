@@ -1,5 +1,5 @@
 #!/bin/bash
-#source ~/set_ww_env/ww-1.5.wsl.25feb.sh
+#source set_ats_env/ats-master.wsl.251124.sh
 
 # Define the directory name
 DIR_NAME="NF01"

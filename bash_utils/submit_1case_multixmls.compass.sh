@@ -1,9 +1,10 @@
 #!/bin/bash
 #SBATCH --account=ber200003
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=48
+#SBATCH --ntasks=48
+#SBATCH --cpus-per-task=1
 #SBATCH --job-name=test-timestep
-#SBATCH --time=48:00:00
+#SBATCH --time=24:00:00
 
 source /etc/profile.d/modules.sh
 module purge
@@ -14,7 +15,7 @@ echo "Original directory: $(pwd)"
 
 # Arrays to store background job PIDs
 declare -a PIDS=()
-declare -a CASES=("standard1e-6" "fixed10s" "fixed40s" "fixed100s" "fixed1000s")
+declare -a CASES=("fixed1000s" "fixed100s" "fixed40s" "fixed10s" "standard.ini0min0")
 
 ORIGINAL_DIR=$(pwd)
 
@@ -29,7 +30,7 @@ for i in {0..4}; do
     
     # Use subshell to isolate each case
     (
-        cd "$ORIGINAL_DIR/"
+        cd "$ORIGINAL_DIR/$case_dir"
         echo "Working in: $(pwd)"
         
         # Setup NF01 directory
@@ -65,10 +66,23 @@ for i in {0..4}; do
         
         # Run ATS
         echo "Starting ATS simulation for $case_name"
-        srun --ntasks=8 --cpus-per-task=1 --cpu-bind=cores \
-             /compass/ber200003/xiao284/softwares/ats-master-251124/amanzi-install-master-Release/bin/ats \
-             --xml_file="$XML_FILE" \
-             > "${case_name}.out" 2> "${case_name}.err"
+        
+	echo "JOBID=$SLURM_JOB_ID"
+	echo "NODELIST=$SLURM_NODELIST"
+	echo "NODES=$SLURM_JOB_NUM_NODES"
+	echo "NTASKS=$SLURM_NTASKS"
+	echo "CPUS_ON_NODE=$SLURM_CPUS_ON_NODE"
+	scontrol show hostnames "$SLURM_NODELIST"
+	#srun --ntasks=8 --cpus-per-task=1 --cpu-bind=cores \
+        #     /compass/ber200003/xiao284/softwares/ats-master-251124/amanzi-install-master-Release/bin/ats \
+        #     --xml_file="$XML_FILE" \
+        #     > "${case_name}.out" 2> "${case_name}.err"
+	srun --nodes=1 --ntasks=8 --cpus-per-task=1 \
+     		--exclusive --distribution=block --hint=nomultithread \
+     		--nodelist="$SLURM_NODELIST" \
+     		/compass/ber200003/xiao284/softwares/ats-master-251124/amanzi-install-master-Release/bin/ats \
+     		--xml_file="$XML_FILE" \
+     		> "${case_name}.out" 2> "${case_name}.err"
         
 	ats_exit_code=$?
 	case_end_time=$(date +%s)

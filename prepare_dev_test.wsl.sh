@@ -29,3 +29,8 @@ cp -r ../OakCreek_ATS_2D_cleaned/casecybernetic-run2 ./
 
 # copy atspflotranutils
 cp -r ../OakCreek_ATS_2D_cleaned/atspflotranutils ./
+
+# copy processed data from ELM-BGC
+mkdir data-processed
+cd data-processeed
+cp -r ../notebooks/ELM_from_huilin/*.h5 ./

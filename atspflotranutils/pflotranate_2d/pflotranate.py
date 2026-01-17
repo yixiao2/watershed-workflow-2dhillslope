@@ -68,6 +68,7 @@ def add_pflotran_components(fout, path):
         t = ''
         inside_pk_tree = False
         inside_water_balance = False
+        inside_state = False
         nesting_level = 0
         cycledriver_content = ''  # Store content from cycledriver-pktree.xml
 
@@ -119,18 +120,32 @@ def add_pflotran_components(fout, path):
                 with open(os.path.join(pflotran_components_dir, 'pks.xml')) as g:
                     for pks in g:
                         t += pks
-            if 'name="evaluators"' in line:
+                        
+            if 'name="state"' in line:
                 t += line  # Add the line
                 line_handled_flag = True  # Mark line as handled
-                with open(os.path.join(pflotran_components_dir, 'state-evals.xml')) as g:
-                    for fieldeval in g:
-                        t += fieldeval
-            if 'name="initial conditions"' in line:
-                t += line  # Add the line
-                line_handled_flag = True  # Mark line as handled
-                with open(os.path.join(pflotran_components_dir, 'state-ics.xml')) as g:
-                    for ics in g:
-                        t += ics
+                inside_state = True
+                state_nesting_level = 1 # Track nesting level within "state"
+            if inside_state:
+                # Detect start of "state"
+                if '<ParameterList' in line and not line_handled_flag:
+                    state_nesting_level += 1
+                if '</ParameterList>' in line:
+                    state_nesting_level -= 1
+                    if state_nesting_level == 0:
+                        inside_state = False
+                if 'name="evaluators"' in line:
+                    t += line  # Add the line
+                    line_handled_flag = True  # Mark line as handled
+                    with open(os.path.join(pflotran_components_dir, 'state-evals.xml')) as g:
+                        for fieldeval in g:
+                            t += fieldeval
+                if 'name="initial conditions"' in line:
+                    t += line  # Add the line
+                    line_handled_flag = True  # Mark line as handled
+                    with open(os.path.join(pflotran_components_dir, 'state-ics.xml')) as g:
+                        for ics in g:
+                            t += ics
             if 'name="observations"' in line:
                 t += line  # Add the line
                 line_handled_flag = True  # Mark line as handled
@@ -157,13 +172,13 @@ def reorganize_fout(fout):
                 print('closing tag error at line '+str(i+1))
                 print(line)
                 sys.exit(1)
-            if line.strip().startswith('<ParameterList'):
+            if line.strip().startswith('<ParameterList') or line.strip().startswith('<!--ParameterList'):
                 t += ' '*indent+line.strip()+'\n'
                 indent += 2
             elif line.strip().startswith('</ParameterList'):
                 indent -= 2
                 t += ' '*indent+line.strip()+'\n'
-            elif line.strip().startswith('<Parameter'):
+            elif line.strip().startswith('<Parameter')or line.strip().startswith('<!--Parameter'):
                 t += ' '*indent+line.strip()+'\n'
     with open(fout, 'w') as f:
         f.write(t)

@@ -164,14 +164,384 @@
       <Parameter name="format" type="string" value="Exodus II" />
       <Parameter name="entity" type="string" value="CELL" />
     </ParameterList>
+    <ParameterList name="obs region bdface left subsurface 0" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{ 0, 0,1101.986}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface left subsurface 1" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{ 0, 0,1101.936}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface left subsurface 2" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{ 0, 0,1101.886}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface left subsurface 3" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{ 0, 0,1101.811}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface left subsurface 4" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{ 0, 0,1101.636}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface left subsurface 5" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{ 0, 0,1101.261}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface left subsurface 6" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{ 0, 0,1100.761}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface left subsurface 7" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{ 0, 0,1100.261}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface left subsurface 8" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{ 0, 0,1099.511}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface left subsurface 9" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{ 0, 0,1098.511}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface left subsurface 10" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{ 0, 0,1097.261}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface left subsurface 11" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{ 0, 0,1095.761}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface left subsurface 12" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{ 0, 0,1094.011}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface left subsurface 13" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{ 0, 0,1092.011}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface left subsurface 14" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{ 0, 0,1090.011}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface left subsurface 15" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{ 0, 0,1087.511}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface left subsurface 16" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{ 0, 0,1084.511}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface left subsurface 17" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{ 0, 0,1081.511}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface right subsurface 0" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{680, 0,972.021}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface right subsurface 1" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{680, 0,971.971}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface right subsurface 2" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{680, 0,971.921}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface right subsurface 3" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{680, 0,971.846}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface right subsurface 4" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{680, 0,971.671}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface right subsurface 5" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{680, 0,971.296}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface right subsurface 6" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{680, 0,970.796}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface right subsurface 7" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{680, 0,970.296}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface right subsurface 8" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{680, 0,969.546}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface right subsurface 9" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{680, 0,968.546}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface right subsurface 10" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{680, 0,967.296}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface right subsurface 11" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{680, 0,965.796}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface right subsurface 12" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{680, 0,964.046}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface right subsurface 13" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{680, 0,962.046}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface right subsurface 14" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{680, 0,960.046}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface right subsurface 15" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{680, 0,957.546}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface right subsurface 16" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{680, 0,954.546}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface right subsurface 17" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{680, 0,951.546}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell left subsurface 0" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{3.4, 0,1101.939}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell left subsurface 1" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{3.4, 0,1101.889}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell left subsurface 2" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{3.4, 0,1101.839}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell left subsurface 3" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{3.4, 0,1101.764}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell left subsurface 4" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{3.4, 0,1101.589}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell left subsurface 5" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{3.4, 0,1101.214}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell left subsurface 6" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{3.4, 0,1100.714}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell left subsurface 7" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{3.4, 0,1100.214}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell left subsurface 8" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{3.4, 0,1099.464}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell left subsurface 9" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{3.4, 0,1098.464}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell left subsurface 10" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{3.4, 0,1097.214}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell left subsurface 11" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{3.4, 0,1095.714}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell left subsurface 12" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{3.4, 0,1093.964}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell left subsurface 13" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{3.4, 0,1091.964}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell left subsurface 14" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{3.4, 0,1089.964}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell left subsurface 15" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{3.4, 0,1087.464}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell left subsurface 16" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{3.4, 0,1084.464}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell left subsurface 17" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{3.4, 0,1081.464}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell right subsurface 0" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{676.6, 0,972.021}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell right subsurface 1" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{676.6, 0,971.971}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell right subsurface 2" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{676.6, 0,971.921}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell right subsurface 3" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{676.6, 0,971.846}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell right subsurface 4" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{676.6, 0,971.671}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell right subsurface 5" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{676.6, 0,971.296}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell right subsurface 6" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{676.6, 0,970.796}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell right subsurface 7" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{676.6, 0,970.296}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell right subsurface 8" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{676.6, 0,969.546}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell right subsurface 9" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{676.6, 0,968.546}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell right subsurface 10" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{676.6, 0,967.296}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell right subsurface 11" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{676.6, 0,965.796}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell right subsurface 12" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{676.6, 0,964.046}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell right subsurface 13" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{676.6, 0,962.046}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell right subsurface 14" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{676.6, 0,960.046}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell right subsurface 15" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{676.6, 0,957.546}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell right subsurface 16" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{676.6, 0,954.546}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdcell right subsurface 17" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{676.6, 0,951.546}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface left surface" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{3.4, 0,1101.964}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="obs region bdface right surface" type="ParameterList">
+      <ParameterList name="region: point" type="ParameterList">
+        <Parameter name="coordinate" type="Array(double)" value="{676.6, 0,972.046}" />
+      </ParameterList>
+    </ParameterList>
   </ParameterList>
 
   <ParameterList name="cycle driver" type="ParameterList">
     <Parameter name="start time" type="double" value=" 0" />
     <Parameter name="start time units" type="string" value="d" />
-    <Parameter name="end time" type="double" value="3650" />
+    <Parameter name="end time" type="double" value="5475" />
     <Parameter name="end time units" type="string" value="d" />
-    <Parameter name="end cycle" type="int" value="10000000" />
+    <Parameter name="end cycle" type="int" value="20000000" />
     <Parameter name="max time step size [s]" type="double" value="86400" />
     <ParameterList name="required times">
       <Parameter name="times start period stop" type="Array(double)" value="{ 0, 1,-1}" />
@@ -285,11 +655,11 @@
         <ParameterList name="component mass source">
           <ParameterList name="DOC production">
             <Parameter name="component names" type="Array(string)" value="{CH2O(aq)}" />
-            <Parameter name="regions" type="Array(string)" value="{NRCS-68901, NRCS-68932}" />
+            <Parameter name="regions" type="Array(string)" value="{NRCS-68932, NRCS-68901}" />
             <Parameter name="spatial distribution method" type="string" value="none" />
             <ParameterList name="source function">
               <Parameter name="function type" type="string" value="bilinear and time" />
-              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DOC_source_spinup_10yr_2011_2015_fdom001.h5" />
+              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DOC_source_merged_spinup10yr_transient_2016_2020_fdom001_2024-07-14-142626.h5" />
               <Parameter name="time header" type="string" value="time [s]" />
               <Parameter name="row header" type="string" value="y [m]" />
               <Parameter name="row coordinate" type="string" value="y" />
@@ -316,7 +686,7 @@
               </ParameterList>
               <ParameterList name="dof 2 function">
                 <ParameterList name="function-tabular" type="ParameterList">
-                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_merged_spinup10yr_transient_2016_2020_fdom001_2024-07-14-142626.h5" />
                   <Parameter name="x header" type="string" value="Time" />
                   <Parameter name="y header" type="string" value="DOC mol water basis v1 [molS molH^-1]" />
                   <Parameter name="form" type="Array(string)" value="{linear}" />
@@ -334,7 +704,7 @@
               </ParameterList>
               <ParameterList name="dof 5 function">
                 <ParameterList name="function-tabular" type="ParameterList">
-                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_merged_spinup10yr_transient_2016_2020_fdom001_2024-07-14-142626.h5" />
                   <Parameter name="x header" type="string" value="Time" />
                   <Parameter name="y header" type="string" value="NH4+ mol water basis [molS molH^-1]" />
                   <Parameter name="form" type="Array(string)" value="{linear}" />
@@ -347,7 +717,7 @@
               </ParameterList>
               <ParameterList name="dof 7 function">
                 <ParameterList name="function-tabular" type="ParameterList">
-                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_merged_spinup10yr_transient_2016_2020_fdom001_2024-07-14-142626.h5" />
                   <Parameter name="x header" type="string" value="Time" />
                   <Parameter name="y header" type="string" value="NO3- mol water basis [molS molH^-1]" />
                   <Parameter name="form" type="Array(string)" value="{linear}" />
@@ -393,7 +763,7 @@
               </ParameterList>
               <ParameterList name="dof 2 function">
                 <ParameterList name="function-tabular" type="ParameterList">
-                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_merged_spinup10yr_transient_2016_2020_fdom001_2024-07-14-142626.h5" />
                   <Parameter name="x header" type="string" value="Time" />
                   <Parameter name="y header" type="string" value="DOC mol water basis v1 [molS molH^-1]" />
                   <Parameter name="form" type="Array(string)" value="{linear}" />
@@ -411,7 +781,7 @@
               </ParameterList>
               <ParameterList name="dof 5 function">
                 <ParameterList name="function-tabular" type="ParameterList">
-                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_merged_spinup10yr_transient_2016_2020_fdom001_2024-07-14-142626.h5" />
                   <Parameter name="x header" type="string" value="Time" />
                   <Parameter name="y header" type="string" value="NH4+ mol water basis [molS molH^-1]" />
                   <Parameter name="form" type="Array(string)" value="{linear}" />
@@ -424,7 +794,7 @@
               </ParameterList>
               <ParameterList name="dof 7 function">
                 <ParameterList name="function-tabular" type="ParameterList">
-                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_merged_spinup10yr_transient_2016_2020_fdom001_2024-07-14-142626.h5" />
                   <Parameter name="x header" type="string" value="Time" />
                   <Parameter name="y header" type="string" value="NO3- mol water basis [molS molH^-1]" />
                   <Parameter name="form" type="Array(string)" value="{linear}" />
@@ -491,7 +861,7 @@
               </ParameterList>
               <ParameterList name="dof 2 function">
                 <ParameterList name="function-tabular" type="ParameterList">
-                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_merged_spinup10yr_transient_2016_2020_fdom001_2024-07-14-142626.h5" />
                   <Parameter name="x header" type="string" value="Time" />
                   <Parameter name="y header" type="string" value="DOC mol water basis v1 [molS molH^-1]" />
                   <Parameter name="form" type="Array(string)" value="{linear}" />
@@ -509,7 +879,7 @@
               </ParameterList>
               <ParameterList name="dof 5 function">
                 <ParameterList name="function-tabular" type="ParameterList">
-                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_merged_spinup10yr_transient_2016_2020_fdom001_2024-07-14-142626.h5" />
                   <Parameter name="x header" type="string" value="Time" />
                   <Parameter name="y header" type="string" value="NH4+ mol water basis [molS molH^-1]" />
                   <Parameter name="form" type="Array(string)" value="{linear}" />
@@ -522,7 +892,7 @@
               </ParameterList>
               <ParameterList name="dof 7 function">
                 <ParameterList name="function-tabular" type="ParameterList">
-                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_merged_spinup10yr_transient_2016_2020_fdom001_2024-07-14-142626.h5" />
                   <Parameter name="x header" type="string" value="Time" />
                   <Parameter name="y header" type="string" value="NO3- mol water basis [molS molH^-1]" />
                   <Parameter name="form" type="Array(string)" value="{linear}" />
@@ -817,7 +1187,7 @@
             <Parameter name="regions" type="Array(string)" value="{left_face}" />
             <ParameterList name="boundary head" type="ParameterList">
               <ParameterList name="function-tabular" type="ParameterList">
-                <Parameter name="file" type="string" value="../../data-processed/NF01/startpt_head_10y_typical.h5" />
+                <Parameter name="file" type="string" value="../../data-processed/NF01/startpt_head_merged_spinup10yr_transient.h5" />
                 <Parameter name="x header" type="string" value="Time" />
                 <Parameter name="y header" type="string" value="startpt_head" />
                 <Parameter name="form" type="Array(string)" value="{linear}" />
@@ -828,7 +1198,7 @@
             <Parameter name="regions" type="Array(string)" value="{right_face}" />
             <ParameterList name="boundary head" type="ParameterList">
               <ParameterList name="function-tabular" type="ParameterList">
-                <Parameter name="file" type="string" value="../../data-processed/NF01/endpt_head_10y_typical.h5" />
+                <Parameter name="file" type="string" value="../../data-processed/NF01/endpt_head_merged_spinup10yr_transient.h5" />
                 <Parameter name="x header" type="string" value="Time" />
                 <Parameter name="y header" type="string" value="endpt_head" />
                 <Parameter name="form" type="Array(string)" value="{linear}" />
@@ -867,7 +1237,7 @@
             <Parameter name="regions" type="Array(string)" value="{surface left}" />
             <ParameterList name="boundary head" type="ParameterList">
               <ParameterList name="function-tabular" type="ParameterList">
-                <Parameter name="file" type="string" value="../../data-processed/NF01/startpt_head_10y_typical.h5" />
+                <Parameter name="file" type="string" value="../../data-processed/NF01/startpt_head_merged_spinup10yr_transient.h5" />
                 <Parameter name="x header" type="string" value="Time" />
                 <Parameter name="y header" type="string" value="startpt_head" />
                 <Parameter name="form" type="Array(string)" value="{linear}" />
@@ -878,7 +1248,7 @@
             <Parameter name="regions" type="Array(string)" value="{surface right}" />
             <ParameterList name="boundary head" type="ParameterList">
               <ParameterList name="function-tabular" type="ParameterList">
-                <Parameter name="file" type="string" value="../../data-processed/NF01/endpt_head_10y_typical.h5" />
+                <Parameter name="file" type="string" value="../../data-processed/NF01/endpt_head_merged_spinup10yr_transient.h5" />
                 <Parameter name="x header" type="string" value="Time" />
                 <Parameter name="y header" type="string" value="endpt_head" />
                 <Parameter name="form" type="Array(string)" value="{linear}" />
@@ -1132,7 +1502,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <Parameter name="function type" type="string" value="tabular" />
-              <Parameter name="file" type="string" value="../../data-processed/OakCreek/OakCreek_MODIS_LAI_typical10yr_2011_2015.h5" />
+              <Parameter name="file" type="string" value="../../data-processed/OakCreek/OakCreek_MODIS_LAI_merged_smoothed.h5" />
               <Parameter name="x header" type="string" value="time [s]" />
               <Parameter name="y header" type="string" value="NLCD Evergreen Forest LAI [-]" />
             </ParameterList>
@@ -1142,7 +1512,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <Parameter name="function type" type="string" value="tabular" />
-              <Parameter name="file" type="string" value="../../data-processed/OakCreek/OakCreek_MODIS_LAI_typical10yr_2011_2015.h5" />
+              <Parameter name="file" type="string" value="../../data-processed/OakCreek/OakCreek_MODIS_LAI_merged_smoothed.h5" />
               <Parameter name="x header" type="string" value="time [s]" />
               <Parameter name="y header" type="string" value="NLCD Shrub Scrub LAI [-]" />
             </ParameterList>
@@ -1164,7 +1534,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <Parameter name="function type" type="string" value="bilinear and time" />
-              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_typical10yr_2011_2015.h5" />
+              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_merged.h5" />
               <Parameter name="time header" type="string" value="time [s]" />
               <Parameter name="row header" type="string" value="y [m]" />
               <Parameter name="row coordinate" type="string" value="y" />
@@ -1186,7 +1556,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <Parameter name="function type" type="string" value="bilinear and time" />
-              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_typical10yr_2011_2015.h5" />
+              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_merged.h5" />
               <Parameter name="time header" type="string" value="time [s]" />
               <Parameter name="row header" type="string" value="y [m]" />
               <Parameter name="row coordinate" type="string" value="y" />
@@ -1205,7 +1575,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <Parameter name="function type" type="string" value="bilinear and time" />
-              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_typical10yr_2011_2015.h5" />
+              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_merged.h5" />
               <Parameter name="time header" type="string" value="time [s]" />
               <Parameter name="row header" type="string" value="y [m]" />
               <Parameter name="row coordinate" type="string" value="y" />
@@ -1224,7 +1594,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <Parameter name="function type" type="string" value="bilinear and time" />
-              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_typical10yr_2011_2015.h5" />
+              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_merged.h5" />
               <Parameter name="time header" type="string" value="time [s]" />
               <Parameter name="row header" type="string" value="y [m]" />
               <Parameter name="row coordinate" type="string" value="y" />
@@ -1243,7 +1613,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <Parameter name="function type" type="string" value="bilinear and time" />
-              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_typical10yr_2011_2015.h5" />
+              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_merged.h5" />
               <Parameter name="time header" type="string" value="time [s]" />
               <Parameter name="row header" type="string" value="y [m]" />
               <Parameter name="row coordinate" type="string" value="y" />
@@ -1264,7 +1634,7 @@
               <Parameter name="function type" type="string" value="composition" />
               <ParameterList name="function1" type="ParameterList">
                 <Parameter name="function type" type="string" value="bilinear and time" />
-                <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_typical10yr_2011_2015.h5" />
+                <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DayMet_merged.h5" />
                 <Parameter name="time header" type="string" value="time [s]" />
                 <Parameter name="row header" type="string" value="y [m]" />
                 <Parameter name="row coordinate" type="string" value="y" />
@@ -1690,12 +2060,12 @@
   </ParameterList>
   <ParameterList name="visualization">
     <ParameterList name="domain" type="ParameterList">
-      <Parameter name="times start period stop" type="Array(double)" value="{0.0, 1.0, -1.0}" />
+      <Parameter name="times start period stop" type="Array(double)" value="{ 0, 1,-1}" />
       <Parameter name="times start period stop units" type="string" value="d" />
       <Parameter name="time units" type="string" value="d" />
     </ParameterList>
     <ParameterList name="surface" type="ParameterList">
-      <Parameter name="times start period stop" type="Array(double)" value="{0.0, 1.0, -1.0}" />
+      <Parameter name="times start period stop" type="Array(double)" value="{ 0, 1,-1}" />
       <Parameter name="times start period stop units" type="string" value="d" />
       <Parameter name="time units" type="string" value="d" />
       <Parameter name="aliased domains" type="Array(string)" value="{snow, canopy}" />
@@ -1948,6 +2318,584 @@
       <Parameter name="times start period stop" type="Array(double)" value="{ 0, 1,-1}" />
       <Parameter name="times start period stop units" type="string" value="d" />
       <Parameter name="time units" type="string" value="d" />
+    </ParameterList>
+    <ParameterList name="water_flux_observation" type="ParameterList">
+      <Parameter name="observation output filename" type="string" value="water_flux.dat" />
+      <Parameter name="times start period stop" type="Array(double)" value="{ 0, 1,-1}" />
+      <Parameter name="times start period stop units" type="string" value="d" />
+      <Parameter name="time units" type="string" value="d" />
+      <ParameterList name="observed quantities" type="ParameterList">
+        <ParameterList name="obs region bdface left subsurface 0" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface left subsurface 0" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface left subsurface 1" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface left subsurface 1" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface left subsurface 2" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface left subsurface 2" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface left subsurface 3" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface left subsurface 3" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface left subsurface 4" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface left subsurface 4" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface left subsurface 5" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface left subsurface 5" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface left subsurface 6" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface left subsurface 6" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface left subsurface 7" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface left subsurface 7" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface left subsurface 8" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface left subsurface 8" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface left subsurface 9" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface left subsurface 9" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface left subsurface 10" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface left subsurface 10" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface left subsurface 11" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface left subsurface 11" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface left subsurface 12" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface left subsurface 12" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface left subsurface 13" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface left subsurface 13" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface left subsurface 14" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface left subsurface 14" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface left subsurface 15" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface left subsurface 15" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface left subsurface 16" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface left subsurface 16" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface left subsurface 17" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface left subsurface 17" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface right subsurface 0" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface right subsurface 0" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface right subsurface 1" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface right subsurface 1" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface right subsurface 2" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface right subsurface 2" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface right subsurface 3" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface right subsurface 3" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface right subsurface 4" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface right subsurface 4" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface right subsurface 5" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface right subsurface 5" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface right subsurface 6" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface right subsurface 6" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface right subsurface 7" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface right subsurface 7" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface right subsurface 8" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface right subsurface 8" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface right subsurface 9" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface right subsurface 9" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface right subsurface 10" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface right subsurface 10" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface right subsurface 11" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface right subsurface 11" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface right subsurface 12" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface right subsurface 12" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface right subsurface 13" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface right subsurface 13" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface right subsurface 14" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface right subsurface 14" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface right subsurface 15" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface right subsurface 15" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface right subsurface 16" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface right subsurface 16" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+        <ParameterList name="obs region bdface right subsurface 17" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_flux" />
+          <Parameter name="direction normalized flux" type="bool" value="true" />
+          <Parameter name="region" type="string" value="obs region bdface right subsurface 17" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="face" />
+          <Parameter name="time integrated" type="bool" value="true" />
+        </ParameterList>
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="total_component_concentration_observation" type="ParameterList">
+      <Parameter name="observation output filename" type="string" value="total_component_concentration.dat" />
+      <Parameter name="times start period stop" type="Array(double)" value="{ 0, 1,-1}" />
+      <Parameter name="times start period stop units" type="string" value="d" />
+      <Parameter name="time units" type="string" value="d" />
+      <ParameterList name="observed quantities" type="ParameterList">
+        <ParameterList name="obs region bdcell left subsurface 0" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell left subsurface 0" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell left subsurface 1" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell left subsurface 1" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell left subsurface 2" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell left subsurface 2" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell left subsurface 3" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell left subsurface 3" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell left subsurface 4" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell left subsurface 4" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell left subsurface 5" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell left subsurface 5" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell left subsurface 6" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell left subsurface 6" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell left subsurface 7" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell left subsurface 7" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell left subsurface 8" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell left subsurface 8" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell left subsurface 9" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell left subsurface 9" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell left subsurface 10" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell left subsurface 10" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell left subsurface 11" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell left subsurface 11" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell left subsurface 12" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell left subsurface 12" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell left subsurface 13" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell left subsurface 13" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell left subsurface 14" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell left subsurface 14" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell left subsurface 15" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell left subsurface 15" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell left subsurface 16" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell left subsurface 16" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell left subsurface 17" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell left subsurface 17" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell right subsurface 0" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell right subsurface 0" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell right subsurface 1" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell right subsurface 1" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell right subsurface 2" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell right subsurface 2" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell right subsurface 3" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell right subsurface 3" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell right subsurface 4" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell right subsurface 4" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell right subsurface 5" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell right subsurface 5" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell right subsurface 6" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell right subsurface 6" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell right subsurface 7" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell right subsurface 7" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell right subsurface 8" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell right subsurface 8" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell right subsurface 9" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell right subsurface 9" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell right subsurface 10" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell right subsurface 10" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell right subsurface 11" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell right subsurface 11" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell right subsurface 12" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell right subsurface 12" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell right subsurface 13" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell right subsurface 13" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell right subsurface 14" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell right subsurface 14" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell right subsurface 15" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell right subsurface 15" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell right subsurface 16" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell right subsurface 16" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdcell right subsurface 17" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdcell right subsurface 17" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="surface-total_component_concentration_observation" type="ParameterList">
+      <Parameter name="observation output filename" type="string" value="surface-total_component_concentration.dat" />
+      <Parameter name="times start period stop" type="Array(double)" value="{ 0, 1,-1}" />
+      <Parameter name="times start period stop units" type="string" value="d" />
+      <Parameter name="time units" type="string" value="d" />
+      <ParameterList name="observed quantities" type="ParameterList">
+        <ParameterList name="obs region bdface left surface" type="ParameterList">
+          <Parameter name="variable" type="string" value="surface-total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdface left surface" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+        <ParameterList name="obs region bdface right surface" type="ParameterList">
+          <Parameter name="variable" type="string" value="surface-total_component_concentration" />
+          <Parameter name="region" type="string" value="obs region bdface right surface" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+          <Parameter name="time integrated" type="bool" value="false" />
+        </ParameterList>
+      </ParameterList>
     </ParameterList>
   </ParameterList>
 </ParameterList>

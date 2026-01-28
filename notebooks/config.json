@@ -19,4 +19,6 @@
 
   "elm_run": "2024-07-14-142626",
   "_comment_elm_run":"prefire: 2024-07-14-142626; fire: 2024-11-20-210107; no fire: 2024-11-20-220109"
+
+  "_comment_to_do": "maybe merge `meshsize_nx`, `dzs_soil`, and `dzs_geo` to config.json in the future"
 }

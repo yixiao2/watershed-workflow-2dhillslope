@@ -13,12 +13,15 @@
   "end_year_transient": 2020,
   "_comment_startend_year_transient": "Specify the transient simulation time range from start_year_spinup/1/1 to end_year_spinup/12/31",
     
-  "watershed_name": "OakCreek",
-  "hucs": "170300020307",
-  "site_name": "NF01",
+  "watershed_name": "Naches",
+  "hucs": "17030002",
+  "site_name": "HS01",
 
   "elm_run": "2024-07-14-142626",
   "_comment_elm_run":"prefire: 2024-07-14-142626; fire: 2024-11-20-210107; no fire: 2024-11-20-220109",
+
+  "meshsize_nx": 100,
+  "_comment_meshsize_nx": "number of grid cells along the x axis",
 
   "_comment_to_do": "maybe merge `meshsize_nx`, `dzs_soil`, and `dzs_geo` to config.json in the future"
 }

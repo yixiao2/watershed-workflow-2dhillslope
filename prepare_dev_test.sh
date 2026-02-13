@@ -13,12 +13,13 @@ cp ../../Naches_ATS_2D_cleaned/notebooks/caseflow-cyclic_steadystate-template.at
 cp ../../Naches_ATS_2D_cleaned/notebooks/caseflow-transient-template.ats1.5.xml ./
 
 #ln -s ../../Naches_ATS_2D_cleaned/notebooks/data ./data
-cp ../../Naches_ATS_2D_cleaned/notebooks/data ./data
+cp -d ../../Naches_ATS_2D_cleaned/notebooks/data ./data
 #ln -s ../../Naches_ATS_2D_cleaned/notebooks/MODIS_raw ./MODIS_raw
-cp ../../Naches_ATS_2D_cleaned/notebooks/MODIS_raw ./MODIS_raw
+cp -d ../../Naches_ATS_2D_cleaned/notebooks/MODIS_raw ./MODIS_raw
 #ln -s ../../Naches_ATS_2D_cleaned/notebooks/Naches_from_sundar ./Naches_from_sundar
 #ln -s ../../Naches_ATS_2D_cleaned/notebooks/ELM_from_huilin ./ELM_from_huilin
 cp -r ../../Naches_ATS_2D_cleaned/notebooks/ELM_outputs_process ./ELM_outputs_process
+cp -r ../../Naches_ATS_2D_cleaned/notebooks/site_selection ./site_selection
 
 cd ..
 # prepare folders for case ats-flow run0/1/2

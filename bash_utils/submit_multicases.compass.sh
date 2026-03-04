@@ -24,11 +24,11 @@ declare -a CASES_DIRS=("test_Naches_ATS_2D_cleaned.IG01" \
                        "test_Naches_ATS_2D_cleaned.MS01" \
                        "test_Naches_ATS_2D_cleaned.HS01")
 # caseflow-run0
-declare -a ATS_DIRS= ("caseflow-run0" \
-                      "caseflow-run0" \
-                      "caseflow-run0" \
-                      "caseflow-run0" \
-                      "caseflow-run0")
+declare -a ATS_DIRS=("caseflow-run0" \
+                     "caseflow-run0" \
+                     "caseflow-run0" \
+                     "caseflow-run0" \
+                     "caseflow-run0")
 declare -a DIR_NAMES=("IG01"    "UB01"    "LS01"    "MS01"    "HS01")
 declare -a XML_FILES=("IG01_nx100_nz18.run0.v1.6.xml" \
                       "UB01_nx100_nz18.run0.v1.6.xml" \
@@ -69,7 +69,7 @@ echo "=== Overall job started at: $(date) ==="
 for ((i=0; i<NUM_CASES; i++)); do
     case_name=${CASES[i]}
     case_dir=${CASES_DIRS[i]}
-    ats_dir =${ATS_DIRS[i]}
+    ats_dir=${ATS_DIRS[i]}
     dir_name=${DIR_NAMES[i]}
     xml_file=${XML_FILES[i]}
 

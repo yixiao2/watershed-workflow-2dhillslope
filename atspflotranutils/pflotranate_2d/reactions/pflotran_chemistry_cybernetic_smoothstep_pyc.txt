@@ -77,7 +77,7 @@ CONSTRAINT BCrain
   CONCENTRATIONS
     C5H7O2N(aq) 1e-10 T 
     CH2O(aq) 1e-10 T 
-    CO2(aq) 2.48e-03 T 
+    CO2(aq) 1e-10 T 
     N2(aq) 1e-10 T 
     NH4+ 1e-10 T 
     NO2- 1e-10 T 

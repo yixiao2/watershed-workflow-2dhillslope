@@ -88,7 +88,7 @@
               </ParameterList>
               <ParameterList name="dof 3 function"> <!--ParameterList name="left_subsurface CO2"-->
                 <ParameterList name="function-constant">
-                  <Parameter name="value" type="double" value="3.636363e-05" />
+                  <Parameter name="value" type="double" value="4.50909e-05" />
                 </ParameterList>
               </ParameterList>
               <ParameterList name="dof 4 function"> <!--ParameterList name="left_subsurface N2"-->
@@ -165,7 +165,7 @@
               </ParameterList>
               <ParameterList name="dof 3 function"> <!--ParameterList name="right_subsurface CO2"-->
                 <ParameterList name="function-constant">
-                  <Parameter name="value" type="double" value="3.636363e-05" />
+                  <Parameter name="value" type="double" value="4.50909e-05" />
                 </ParameterList>
               </ParameterList>
               <ParameterList name="dof 4 function"> <!--ParameterList name="right_subsurface N2"-->
@@ -196,7 +196,7 @@
               </ParameterList>
               <ParameterList name="dof 8 function"> <!--ParameterList name="right_subsurface O2"-->
                 <ParameterList name="function-constant">
-                  <Parameter name="value" type="double" value="4.85454e-06" />
+                  <Parameter name="value" type="double" value="6.52727e-06" />
                 </ParameterList>
               </ParameterList>
               <ParameterList name="dof 9 function"> <!--ParameterList name="right_subsurface Tsw"-->

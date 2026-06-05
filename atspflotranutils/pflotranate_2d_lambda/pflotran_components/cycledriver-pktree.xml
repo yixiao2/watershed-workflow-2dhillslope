@@ -1,0 +1,24 @@
+      <ParameterList name="flow and transport">
+        <Parameter name="PK type" type="string" value="coupled flow and transport"/>
+        <ParameterList name="reactive transport" type="ParameterList">
+          <Parameter name="PK type" type="string" value="surface subsurface reactive transport"/>
+          <ParameterList name="chemistry coupler" type="ParameterList">
+            <Parameter name="PK type" type="string" value="weak MPC"/>
+            <ParameterList name="chemistry surface" type="ParameterList">
+              <Parameter name="PK type" type="string" value="chemistry alquimia"/>
+            </ParameterList>
+            <ParameterList name="chemistry subsurface" type="ParameterList">
+              <Parameter name="PK type" type="string" value="chemistry alquimia"/>
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="surface-subsurface transport coupler">
+            <Parameter name="PK type" type="string" value="surface subsurface transport"/>
+            <ParameterList name="subsurface transport">
+              <Parameter name="PK type" type="string" value="transport ATS"/>
+            </ParameterList>
+            <ParameterList name="surface transport">
+              <Parameter name="PK type" type="string" value="transport ATS"/>
+            </ParameterList>
+          </ParameterList>
+        </ParameterList>
+      </ParameterList>

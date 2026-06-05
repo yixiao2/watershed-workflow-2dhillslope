@@ -1,0 +1,853 @@
+    <ParameterList name="flow and transport">
+      <Parameter name="PK type" type="string" value="coupled flow and transport" />
+      <Parameter name="PKs order" type="Array(string)" value="{water_balance, reactive transport}" />
+      <Parameter name="subcycle" type="Array(int)" value="{0, 1}" />
+    </ParameterList>
+    <ParameterList name="surface-subsurface transport coupler">
+      <Parameter name="PK type" type="string" value="surface subsurface transport" />
+      <Parameter name="PK name" type="string" value="surface subsurface transport" />
+      <Parameter name="PKs order" type="Array(string)" value="{subsurface transport, surface transport}" />
+      <Parameter name="component names" type="Array(string)" value="{HCO3-, NH4+, HPO4--, HS-, H+, O2(aq), BIOMASS, C28-DONOR, C24-DONOR, C21-DONOR, C19-DONOR, C18-DONOR, C17-DONOR, C16-DONOR, C14-DONOR, C12-DONOR, C10-DONOR, Tsw, Tgw, Tr}" />
+    </ParameterList>
+    <ParameterList name="subsurface transport">
+      <Parameter name="PK type" type="string" value="transport ATS" />
+      <Parameter name="component names" type="Array(string)" value="{HCO3-, NH4+, HPO4--, HS-, H+, O2(aq), BIOMASS, C28-DONOR, C24-DONOR, C21-DONOR, C19-DONOR, C18-DONOR, C17-DONOR, C16-DONOR, C14-DONOR, C12-DONOR, C10-DONOR, Tsw, Tgw, Tr}" />
+      <Parameter name="advection spatial discretization order" type="int" value="1" />
+      <Parameter name="temporal discretization order" type="int" value="1" />
+      <Parameter name="cfl" type="double" value=" 1" />
+      <Parameter name="debug cells" type="Array(int)" value="{99}" />
+      <ParameterList name="verbose object">
+        <Parameter name="verbosity level" type="string" value="default" />
+      </ParameterList>
+        <ParameterList name="initial conditions" type="ParameterList">
+      </ParameterList>
+      <ParameterList name="tortuosity [-]" type="ParameterList">
+        <Parameter name="aqueous" type="double" value="1.0" />
+        <Parameter name="gaseous" type="double" value="1.0" />
+      </ParameterList>
+      <ParameterList name="diffusion">
+        <Parameter name="discretization primary" type="string" value="mfd: optimized for monotonicity" />
+        <Parameter name="discretization secondary" type="string" value="mfd: two-point flux approximation" />
+        <Parameter name="schema" type="Array(string)" value="{face, cell}" />
+        <Parameter name="preconditioner schema" type="Array(string)" value="{face}" />
+        <ParameterList name="inverse">
+          <Parameter name="iterative method" type="string" value="pcg" />
+          <Parameter name="preconditioning method" type="string" value="boomer amg" />
+          <ParameterList name="pcg parameters">
+            <Parameter name="maximum number of iterations" type="int" value="400" />
+            <Parameter name="error tolerance" type="double" value="1e-10" />
+            <Parameter name="convergence criteria" type="Array(string)" value="{relative rhs, make one iteration}" />
+          </ParameterList>
+          <ParameterList name="boomer amg parameters">
+            <Parameter name="tolerance" type="double" value="0.0" />
+            <Parameter name="smoother sweeps" type="int" value="1" />
+            <Parameter name="cycle applications" type="int" value="1" />
+            <Parameter name="strong threshold" type="double" value="0.65" />
+          </ParameterList>
+        </ParameterList>
+      </ParameterList>
+      <ParameterList name="source terms">
+        <ParameterList name="component mass source">
+          <ParameterList name="DOC production bin1">
+            <Parameter name="component names" type="Array(string)" value="{C28-DONOR}" />
+            <Parameter name="regions" type="Array(string)" value="{NRCS-68901, NRCS-68932}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <ParameterList name="source function">
+              <Parameter name="function type" type="string" value="bilinear and time" />
+              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DOC_source_spinup_10yr_2011_2015_fdom001.h5" />
+              <Parameter name="time header" type="string" value="time [s]" />
+              <Parameter name="row header" type="string" value="y [m]" />
+              <Parameter name="row coordinate" type="string" value="y" />
+              <Parameter name="column header" type="string" value="x [m]" />
+              <Parameter name="column coordinate" type="string" value="x" />
+              <Parameter name="value header" type="string" value="DOC production C28-DONOR [mol m^-3 s^-1]" />
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="DOC production bin2">
+            <Parameter name="component names" type="Array(string)" value="{C24-DONOR}" />
+            <Parameter name="regions" type="Array(string)" value="{NRCS-68901, NRCS-68932}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <ParameterList name="source function">
+              <Parameter name="function type" type="string" value="bilinear and time" />
+              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DOC_source_spinup_10yr_2011_2015_fdom001.h5" />
+              <Parameter name="time header" type="string" value="time [s]" />
+              <Parameter name="row header" type="string" value="y [m]" />
+              <Parameter name="row coordinate" type="string" value="y" />
+              <Parameter name="column header" type="string" value="x [m]" />
+              <Parameter name="column coordinate" type="string" value="x" />
+              <Parameter name="value header" type="string" value="DOC production C24-DONOR [mol m^-3 s^-1]" />
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="DOC production bin3">
+            <Parameter name="component names" type="Array(string)" value="{C21-DONOR}" />
+            <Parameter name="regions" type="Array(string)" value="{NRCS-68901, NRCS-68932}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <ParameterList name="source function">
+              <Parameter name="function type" type="string" value="bilinear and time" />
+              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DOC_source_spinup_10yr_2011_2015_fdom001.h5" />
+              <Parameter name="time header" type="string" value="time [s]" />
+              <Parameter name="row header" type="string" value="y [m]" />
+              <Parameter name="row coordinate" type="string" value="y" />
+              <Parameter name="column header" type="string" value="x [m]" />
+              <Parameter name="column coordinate" type="string" value="x" />
+              <Parameter name="value header" type="string" value="DOC production C21-DONOR [mol m^-3 s^-1]" />
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="DOC production bin4">
+            <Parameter name="component names" type="Array(string)" value="{C19-DONOR}" />
+            <Parameter name="regions" type="Array(string)" value="{NRCS-68901, NRCS-68932}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <ParameterList name="source function">
+              <Parameter name="function type" type="string" value="bilinear and time" />
+              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DOC_source_spinup_10yr_2011_2015_fdom001.h5" />
+              <Parameter name="time header" type="string" value="time [s]" />
+              <Parameter name="row header" type="string" value="y [m]" />
+              <Parameter name="row coordinate" type="string" value="y" />
+              <Parameter name="column header" type="string" value="x [m]" />
+              <Parameter name="column coordinate" type="string" value="x" />
+              <Parameter name="value header" type="string" value="DOC production C19-DONOR [mol m^-3 s^-1]" />
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="DOC production bin5">
+            <Parameter name="component names" type="Array(string)" value="{C18-DONOR}" />
+            <Parameter name="regions" type="Array(string)" value="{NRCS-68901, NRCS-68932}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <ParameterList name="source function">
+              <Parameter name="function type" type="string" value="bilinear and time" />
+              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DOC_source_spinup_10yr_2011_2015_fdom001.h5" />
+              <Parameter name="time header" type="string" value="time [s]" />
+              <Parameter name="row header" type="string" value="y [m]" />
+              <Parameter name="row coordinate" type="string" value="y" />
+              <Parameter name="column header" type="string" value="x [m]" />
+              <Parameter name="column coordinate" type="string" value="x" />
+              <Parameter name="value header" type="string" value="DOC production C18-DONOR [mol m^-3 s^-1]" />
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="DOC production bin6">
+            <Parameter name="component names" type="Array(string)" value="{C17-DONOR}" />
+            <Parameter name="regions" type="Array(string)" value="{NRCS-68901, NRCS-68932}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <ParameterList name="source function">
+              <Parameter name="function type" type="string" value="bilinear and time" />
+              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DOC_source_spinup_10yr_2011_2015_fdom001.h5" />
+              <Parameter name="time header" type="string" value="time [s]" />
+              <Parameter name="row header" type="string" value="y [m]" />
+              <Parameter name="row coordinate" type="string" value="y" />
+              <Parameter name="column header" type="string" value="x [m]" />
+              <Parameter name="column coordinate" type="string" value="x" />
+              <Parameter name="value header" type="string" value="DOC production C17-DONOR [mol m^-3 s^-1]" />
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="DOC production bin7">
+            <Parameter name="component names" type="Array(string)" value="{C16-DONOR}" />
+            <Parameter name="regions" type="Array(string)" value="{NRCS-68901, NRCS-68932}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <ParameterList name="source function">
+              <Parameter name="function type" type="string" value="bilinear and time" />
+              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DOC_source_spinup_10yr_2011_2015_fdom001.h5" />
+              <Parameter name="time header" type="string" value="time [s]" />
+              <Parameter name="row header" type="string" value="y [m]" />
+              <Parameter name="row coordinate" type="string" value="y" />
+              <Parameter name="column header" type="string" value="x [m]" />
+              <Parameter name="column coordinate" type="string" value="x" />
+              <Parameter name="value header" type="string" value="DOC production C16-DONOR [mol m^-3 s^-1]" />
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="DOC production bin8">
+            <Parameter name="component names" type="Array(string)" value="{C14-DONOR}" />
+            <Parameter name="regions" type="Array(string)" value="{NRCS-68901, NRCS-68932}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <ParameterList name="source function">
+              <Parameter name="function type" type="string" value="bilinear and time" />
+              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DOC_source_spinup_10yr_2011_2015_fdom001.h5" />
+              <Parameter name="time header" type="string" value="time [s]" />
+              <Parameter name="row header" type="string" value="y [m]" />
+              <Parameter name="row coordinate" type="string" value="y" />
+              <Parameter name="column header" type="string" value="x [m]" />
+              <Parameter name="column coordinate" type="string" value="x" />
+              <Parameter name="value header" type="string" value="DOC production C14-DONOR [mol m^-3 s^-1]" />
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="DOC production bin9">
+            <Parameter name="component names" type="Array(string)" value="{C12-DONOR}" />
+            <Parameter name="regions" type="Array(string)" value="{NRCS-68901, NRCS-68932}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <ParameterList name="source function">
+              <Parameter name="function type" type="string" value="bilinear and time" />
+              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DOC_source_spinup_10yr_2011_2015_fdom001.h5" />
+              <Parameter name="time header" type="string" value="time [s]" />
+              <Parameter name="row header" type="string" value="y [m]" />
+              <Parameter name="row coordinate" type="string" value="y" />
+              <Parameter name="column header" type="string" value="x [m]" />
+              <Parameter name="column coordinate" type="string" value="x" />
+              <Parameter name="value header" type="string" value="DOC production C12-DONOR [mol m^-3 s^-1]" />
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="DOC production bin10">
+            <Parameter name="component names" type="Array(string)" value="{C10-DONOR}" />
+            <Parameter name="regions" type="Array(string)" value="{NRCS-68901, NRCS-68932}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <ParameterList name="source function">
+              <Parameter name="function type" type="string" value="bilinear and time" />
+              <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_DOC_source_spinup_10yr_2011_2015_fdom001.h5" />
+              <Parameter name="time header" type="string" value="time [s]" />
+              <Parameter name="row header" type="string" value="y [m]" />
+              <Parameter name="row coordinate" type="string" value="y" />
+              <Parameter name="column header" type="string" value="x [m]" />
+              <Parameter name="column coordinate" type="string" value="x" />
+              <Parameter name="value header" type="string" value="DOC production C10-DONOR [mol m^-3 s^-1]" />
+            </ParameterList>
+          </ParameterList>
+        </ParameterList>
+      </ParameterList>
+      <ParameterList name="boundary conditions">
+        <ParameterList name="mole fraction" type="ParameterList">
+          <ParameterList name="left_subsurface bc" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{left_face}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{HCO3-, NH4+, HPO4--, HS-, H+, O2(aq), BIOMASS, C28-DONOR, C24-DONOR, C21-DONOR, C19-DONOR, C18-DONOR, C17-DONOR, C16-DONOR, C14-DONOR, C12-DONOR, C10-DONOR, Tsw, Tgw, Tr}" />
+            <ParameterList name="boundary mole fraction function">
+              <Parameter name="number of dofs" type="int" value="20" />
+              <ParameterList name="dof 1 function"> <!--left_subsurface HCO3(-)-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="4.50909e-05" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 2 function"> <!--left_subsurface NH4+-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="NH4+ mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 3 function"> <!--left_subsurface HPO4(2-)-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="1.8181818e-12" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 4 function"> <!--left_subsurface HS(-)-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="1.8181818e-12" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 5 function"> <!--left_subsurface H+-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="1.8181818e-09" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 6 function"> <!--left_subsurface O2-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="4.85454e-06" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 7 function"> <!--left_subsurface BIOMASS-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="9.09090909e-7" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 8 function"> <!--left_subsurface C28-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C28-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 9 function"> <!--left_subsurface C24-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C24-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 10 function"> <!--left_subsurface C21-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C21-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 11 function"> <!--left_subsurface C19-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C19-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 12 function"> <!--left_subsurface C18-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C18-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 13 function"> <!--left_subsurface C17-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C17-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 14 function"> <!--left_subsurface C16-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C16-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 15 function"> <!--left_subsurface C14-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C14-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 16 function"> <!--left_subsurface C12-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C12-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 17 function"> <!--left_subsurface C10-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C10-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 18 function"> <!--left_subsurface Tsw-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="1.8181818e-12" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 19 function"> <!--left_subsurface Tgw-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="1.81818182e-07" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 20 function"> <!--left_subsurface Tr-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="1.8181818e-12" />
+                </ParameterList>
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="right_subsurface bc" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{right_face}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{HCO3-, NH4+, HPO4--, HS-, H+, O2(aq), BIOMASS, C28-DONOR, C24-DONOR, C21-DONOR, C19-DONOR, C18-DONOR, C17-DONOR, C16-DONOR, C14-DONOR, C12-DONOR, C10-DONOR, Tsw, Tgw, Tr}" />
+            <ParameterList name="boundary mole fraction function">
+              <Parameter name="number of dofs" type="int" value="20" />
+              <ParameterList name="dof 1 function"> <!--right_subsurface HCO3(-)-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="4.50909e-05" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 2 function"> <!--right_subsurface NH4+-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="NH4+ mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 3 function"> <!--right_subsurface HPO4(2-)-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="1.8181818e-12" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 4 function"> <!--right_subsurface HS(-)-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="1.8181818e-12" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 5 function"> <!--right_subsurface H+-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="1.8181818e-09" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 6 function"> <!--right_subsurface O2-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="4.85454e-06" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 7 function"> <!--right_subsurface BIOMASS-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="9.09090909e-7" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 8 function"> <!--right_subsurface C28-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C28-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 9 function"> <!--right_subsurface C24-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C24-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 10 function"> <!--right_subsurface C21-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C21-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 11 function"> <!--right_subsurface C19-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C19-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 12 function"> <!--right_subsurface C18-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C18-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 13 function"> <!--right_subsurface C17-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C17-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 14 function"> <!--right_subsurface C16-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C16-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 15 function"> <!--right_subsurface C14-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C14-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 16 function"> <!--right_subsurface C12-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C12-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 17 function"> <!--right_subsurface C10-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C10-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 18 function"> <!--right_subsurface Tsw-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="1.8181818e-12" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 19 function"> <!--right_subsurface Tgw-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="1.81818182e-07" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 20 function"> <!--right_subsurface Tr-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="1.8181818e-12" />
+                </ParameterList>
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+        </ParameterList>
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="surface transport">
+      <Parameter name="PK type" type="string" value="transport ATS" />
+      <Parameter name="domain name" type="string" value="surface" />
+      <Parameter name="water source in meters" type="bool" value="true" />
+      <Parameter name="component names" type="Array(string)" value="{HCO3-, NH4+, HPO4--, HS-, H+, O2(aq), BIOMASS, C28-DONOR, C24-DONOR, C21-DONOR, C19-DONOR, C18-DONOR, C17-DONOR, C16-DONOR, C14-DONOR, C12-DONOR, C10-DONOR, Tsw, Tgw, Tr}" />
+      <Parameter name="advection spatial discretization order" type="int" value="1" />
+      <Parameter name="temporal discretization order" type="int" value="1" />
+      <Parameter name="cfl" type="double" value=" 1" />
+      <Parameter name="water tolerance" type="double" value="0.001" />
+      <Parameter name="debug cells" type="Array(int)" value="{0}" />
+      <ParameterList name="initial conditions" type="ParameterList">
+      </ParameterList>
+      <ParameterList name="boundary conditions">
+        <ParameterList name="mole fraction" type="ParameterList">
+          <ParameterList name="left_surface bc" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{surface left}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{HCO3-, NH4+, HPO4--, HS-, H+, O2(aq), BIOMASS, C28-DONOR, C24-DONOR, C21-DONOR, C19-DONOR, C18-DONOR, C17-DONOR, C16-DONOR, C14-DONOR, C12-DONOR, C10-DONOR, Tsw, Tgw, Tr}" />
+            <ParameterList name="boundary mole fraction function">
+              <Parameter name="number of dofs" type="int" value="20" />
+              <ParameterList name="dof 1 function"> <!--left_surface HCO3(-)-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="2.036363e-05" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 2 function"> <!--left_surface NH4+-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="NH4+ mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 3 function"> <!--left_surface HPO4(2-)-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="1.8181818e-12" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 4 function"> <!--left_surface HS(-)-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="1.8181818e-12" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 5 function"> <!--left_surface H+-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="1.8181818e-09" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 6 function"> <!--left_surface O2-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="6.52727e-06" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 7 function"> <!--left_surface BIOMASS-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="9.09090909e-7" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 8 function"> <!--left_surface C28-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C28-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 9 function"> <!--left_surface C24-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C24-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 10 function"> <!--left_surface C21-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C21-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 11 function"> <!--left_surface C19-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C19-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 12 function"> <!--left_surface C18-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C18-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 13 function"> <!--left_surface C17-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C17-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 14 function"> <!--left_surface C16-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C16-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 15 function"> <!--left_surface C14-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C14-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 16 function"> <!--left_surface C12-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C12-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 17 function"> <!--left_surface C10-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C10-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 18 function"> <!--left_surface Tsw-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="1.8181818e-07" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 19 function"> <!--left_surface Tgw-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="1.81818182e-12" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 20 function"> <!--left_surface Tr-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="1.8181818e-12" />
+                </ParameterList>
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+          <ParameterList name="right_surface bc" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{surface right}" />
+            <Parameter name="spatial distribution method" type="string" value="none" />
+            <Parameter name="component names" type="Array(string)" value="{HCO3-, NH4+, HPO4--, HS-, H+, O2(aq), BIOMASS, C28-DONOR, C24-DONOR, C21-DONOR, C19-DONOR, C18-DONOR, C17-DONOR, C16-DONOR, C14-DONOR, C12-DONOR, C10-DONOR, Tsw, Tgw, Tr}" />
+            <ParameterList name="boundary mole fraction function">
+              <Parameter name="number of dofs" type="int" value="20" />
+              <ParameterList name="dof 1 function"> <!--right_surface HCO3(-)-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="2.036363e-05" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 2 function"> <!--right_surface NH4+-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="NH4+ mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 3 function"> <!--right_surface HPO4(2-)-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="1.8181818e-12" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 4 function"> <!--right_surface HS(-)-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="1.8181818e-12" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 5 function"> <!--right_surface H+-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="1.8181818e-09" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 6 function"> <!--right_surface O2-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="6.52727e-06" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 7 function"> <!--right_surface BIOMASS-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="9.09090909e-7" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 8 function"> <!--right_surface C28-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C28-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 9 function"> <!--right_surface C24-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C24-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 10 function"> <!--right_surface C21-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C21-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 11 function"> <!--right_surface C19-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C19-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 12 function"> <!--right_surface C18-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C18-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 13 function"> <!--right_surface C17-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C17-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 14 function"> <!--right_surface C16-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C16-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 15 function"> <!--right_surface C14-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C14-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 16 function"> <!--right_surface C12-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C12-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 17 function"> <!--right_surface C10-DONOR-->
+                <ParameterList name="function-tabular" type="ParameterList">
+                  <Parameter name="file" type="string" value="../../data-processed/NF01/NF01_CNbc_conc_spinup_10yr_2011_2015_fdom001_k15.h5" />
+                  <Parameter name="x header" type="string" value="Time" />
+                  <Parameter name="y header" type="string" value="C10-DONOR mol water basis [molS molH^-1]" />
+                  <Parameter name="form" type="Array(string)" value="{linear}" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 18 function"> <!--right_surface Tsw-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="1.8181818e-07" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 19 function"> <!--right_surface Tgw-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="1.81818182e-12" />
+                </ParameterList>
+              </ParameterList>
+              <ParameterList name="dof 20 function"> <!--right_surface Tr-->
+                <ParameterList name="function-constant">
+                  <Parameter name="value" type="double" value="1.8181818e-12" />
+                </ParameterList>
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+        </ParameterList>
+      </ParameterList>
+      <ParameterList name="verbose object">
+        <Parameter name="verbosity level" type="string" value="default" />
+      </ParameterList>
+      <ParameterList name="source terms">
+        <ParameterList name="geochemical" type="ParameterList">
+          <ParameterList name="Tracer injection" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{surface domain}" />
+            <Parameter name="solutes" type="Array(string)" value="{HCO3-, NH4+, HPO4--, HS-, H+, O2(aq), BIOMASS, C28-DONOR, C24-DONOR, C21-DONOR, C19-DONOR, C18-DONOR, C17-DONOR, C16-DONOR, C14-DONOR, C12-DONOR, C10-DONOR, Tsw, Tgw, Tr}" />
+            <Parameter name="times" type="Array(double)" value="{ 0,1e+20}" />
+            <Parameter name="geochemical conditions" type="Array(string)" value="{BCrain, BCrain}" />
+            <Parameter name="time functions" type="Array(string)" value="{constant}" />
+            <Parameter name="ats units [moles/m^3]" type="bool" value="true" />
+          </ParameterList>
+        </ParameterList>
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="reactive transport" type="ParameterList">
+      <Parameter name="PK type" type="string" value="surface subsurface reactive transport" />
+      <Parameter name="PK name" type="string" value="reactive transport" />
+      <Parameter name="PKs order" type="Array(string)" value="{chemistry coupler, surface-subsurface transport coupler}" />
+      <Parameter name="transport index" type="int" value="1" />
+    </ParameterList>
+    <ParameterList name="chemistry coupler" type="ParameterList">
+      <Parameter name="PK type" type="string" value="weak MPC" />
+      <Parameter name="PK name" type="string" value="coupled chemistry" />
+      <Parameter name="PKs order" type="Array(string)" value="{chemistry subsurface, chemistry surface}" />
+    </ParameterList>
+    <ParameterList name="chemistry subsurface" type="ParameterList">
+      <Parameter name="PK type" type="string" value="chemistry alquimia" />
+      <Parameter name="engine" type="string" value="PFloTran" />
+      <Parameter name="domain name" type="string" value="domain" />
+      <Parameter name="engine input file" type="string" value="../reactions/pflotran_chemistry_lambda10bin_pyc.txt" />
+      <ParameterList name="initial conditions" type="ParameterList">
+        <ParameterList name="geochemical conditions" type="ParameterList">
+          <ParameterList name="ICsubsurface" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{computational domain}" />
+          </ParameterList>
+        </ParameterList>
+      </ParameterList>
+      <ParameterList name="timestep controller" type="ParameterList">
+        <Parameter name="timestep controller type" type="string" value="fixed" />
+        <ParameterList name="timestep controller fixed parameters" type="ParameterList">
+          <Parameter name="timestep [s]" type="double" value="1000.0" />
+        </ParameterList>
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="chemistry surface" type="ParameterList">
+      <Parameter name="PK type" type="string" value="chemistry alquimia" />
+      <Parameter name="engine" type="string" value="PFloTran" />
+      <Parameter name="domain name" type="string" value="surface" />
+      <Parameter name="saturation liquid key" type="string" value="surface-ponded_depth" />
+      <Parameter name="engine input file" type="string" value="../reactions/pflotran_chemistry_lambda10bin_pyc.txt" />
+      <ParameterList name="initial conditions" type="ParameterList">
+        <ParameterList name="geochemical conditions" type="ParameterList">
+          <ParameterList name="ICsurface" type="ParameterList">
+            <Parameter name="regions" type="Array(string)" value="{surface domain}" />
+          </ParameterList>
+        </ParameterList>
+      </ParameterList>
+      <ParameterList name="timestep controller" type="ParameterList">
+        <Parameter name="timestep controller type" type="string" value="fixed" />
+        <ParameterList name="timestep controller fixed parameters" type="ParameterList">
+          <Parameter name="timestep [s]" type="double" value="1000.0" />
+        </ParameterList>
+      </ParameterList>
+    </ParameterList>

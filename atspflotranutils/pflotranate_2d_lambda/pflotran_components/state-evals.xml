@@ -1,0 +1,20 @@
+      <ParameterList name="surface-porosity">
+        <Parameter name="evaluator type" type="string" value="independent variable constant" />
+        <Parameter name="value" type="double" value="1.0" />
+      </ParameterList>
+      <ParameterList name="canopy-throughfall_drainage_rain@reactive_transport_next">
+        <Parameter name="evaluator type" type="string" value="alias" />
+        <Parameter name="target" type="string" value="canopy-throughfall_drainage_rain@" />
+      </ParameterList>
+      <ParameterList name="snow-depth@reactive_transport_next">
+        <Parameter name="evaluator type" type="string" value="alias" />
+        <Parameter name="target" type="string" value="snow-depth@" />
+      </ParameterList>
+      <ParameterList name="surface-radiation_balance@reactive_transport_next">
+        <Parameter name="evaluator type" type="string" value="alias" />
+        <Parameter name="target" type="string" value="surface-radiation_balance@" />
+      </ParameterList>
+      <ParameterList name="pressure@reactive_transport_next">
+        <Parameter name="evaluator type" type="string" value="alias" />
+        <Parameter name="target" type="string" value="pressure@" />
+      </ParameterList>

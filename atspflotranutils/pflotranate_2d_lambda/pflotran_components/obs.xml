@@ -1,0 +1,24 @@
+    <ParameterList name="surface total concentration" type="ParameterList">
+      <Parameter name="variable" type="string" value="surface-total_component_concentration" />
+      <Parameter name="region" type="string" value="surface domain" />
+      <Parameter name="functional" type="string" value="average" />
+      <Parameter name="delimiter" type="string" value="," />
+      <Parameter name="time units" type="string" value="s" />
+      <Parameter name="times start period stop" type="Array(double)" value="{ 0,600,-1}" />
+      <Parameter name="times start period stop units" type="string" value="s" />
+      <Parameter name="location name" type="string" value="cell" />
+      <Parameter name="number of vectors" type="int" value="20" />
+      <Parameter name="observation output filename" type="string" value="pflotran_surface_total_concentration.csv" />
+    </ParameterList>
+    <ParameterList name="subsurface total concentration" type="ParameterList">
+      <Parameter name="variable" type="string" value="total_component_concentration" />
+      <Parameter name="region" type="string" value="computational domain" />
+      <Parameter name="functional" type="string" value="average" />
+      <Parameter name="delimiter" type="string" value="," />
+      <Parameter name="time units" type="string" value="s" />
+      <Parameter name="times start period stop" type="Array(double)" value="{ 0,600,-1}" />
+      <Parameter name="times start period stop units" type="string" value="s" />
+      <Parameter name="location name" type="string" value="cell" />
+      <Parameter name="number of vectors" type="int" value="20" />
+      <Parameter name="observation output filename" type="string" value="pflotran_subsurface_total_concentration.csv" />
+    </ParameterList>

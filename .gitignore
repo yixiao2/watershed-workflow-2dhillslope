@@ -28,3 +28,7 @@ data-processed/**
 # ignore .ipynb_checkpoints folders
 .ipynb_checkpoints/
 **/.ipynb_checkpoints/
+
+# Python bytecode
+__pycache__/
+*.py[cod]

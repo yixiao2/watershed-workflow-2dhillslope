@@ -1,27 +1,31 @@
 {
-  "start_year_spinup": 2011,
-  "end_year_spinup": 2015,
-  "_comment_startend_year_spinup": "Specify the spinup simulation time range from start_year_spinup/1/1 to end_year_spinup/12/31",
-
-  "nyears_steadystate_spinup": 10,
-  "_comment_nyears_steadystate_spinup": "Number of years to run steadystate spinup",
-
-  "nyears_cyclic_spinup": 10,
-  "_comment_nyears_cyclic_spinup": "Number of years to run cyclic spinup.",
-
-  "start_year_transient":2016,
-  "end_year_transient": 2020,
-  "_comment_startend_year_transient": "Specify the transient simulation time range from start_year_spinup/1/1 to end_year_spinup/12/31",
-    
-  "watershed_name": "Naches",
-  "hucs": "17030002",
-  "site_name": "S04S10",
-
-  "elm_run": "2024-07-14-142626",
-  "_comment_elm_run":"prefire: 2024-07-14-142626; fire: 2024-11-20-210107; no fire: 2024-11-20-220109",
-
-  "meshsize_nx": 100,
-  "_comment_meshsize_nx": "number of grid cells along the x axis",
-
-  "_comment_to_do": "maybe merge `meshsize_nx`, `dzs_soil`, and `dzs_geo` to config.json in the future"
+  "schema_version": 2,
+  "calendar": "noleap",
+  "elm_root": "/pscratch/sd/x/xiao284/elmbyhuilin/elm",
+  "case": {
+    "watershed_name": "Naches",
+    "hucs": "17030002",
+    "site_name": "S04S10",
+    "meshsize_nx": 100
+  },
+  "spinup": {
+    "source_period": {
+      "start_date": "2012-10-01",
+      "end_date": "2017-09-30"
+    },
+    "steady_state_years": 10,
+    "cyclic_years": 10,
+    "elm_run": "2024-07-14-142626"
+  },
+  "prefire_transient": {
+    "start_date": "2017-10-01",
+    "end_date": "2021-08-03",
+    "elm_run": "2024-07-14-142626"
+  },
+  "postfire_transient": {
+    "start_date": "2021-08-04",
+    "end_date": "2023-10-01",
+    "ignition_day_elm_run": "2024-08-27-132724",
+    "elm_run": "2024-11-20-210107"
+  }
 }

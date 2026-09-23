@@ -6,6 +6,15 @@ in bin order, are:
 `C38-DONOR`, `C35-DONOR`, `C29-DONOR`, `C27-DONOR`, `C25-DONOR`,
 `C23-DONOR`, `C20-DONOR`, `C19-DONOR`, `C18-DONOR`, and `C13-DONOR`.
 
+## Schema-v2 phase contract
+
+The prepostfire case reads inclusive no-leap phase dates from
+`notebooks/config.json`. Spinup and prefire forcing are merged only for the
+prefire coupled run. When `postfire_transient` is configured, its DOC and CN
+forcing is a separate phase-local input with a zero-based time axis; the
+postfire run must restart from the final prefire checkpoint. A prefire-only
+case omits `postfire_transient` and produces no postfire forcing.
+
 The notebook `notebooks/2-add_reaction_lambda.ipynb` reads these total-DOC
 S04S10 inputs:
 

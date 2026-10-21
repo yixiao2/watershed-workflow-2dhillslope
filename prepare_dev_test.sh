@@ -8,6 +8,7 @@ mkdir notebooks
 cd notebooks
 cp ../../Naches_ATS_2D_cleaned/notebooks/*.ipynb ./
 cp ../../Naches_ATS_2D_cleaned/notebooks/config.json ./
+cp ../../Naches_ATS_2D_cleaned/notebooks/config_utils.py ./
 cp ../../Naches_ATS_2D_cleaned/notebooks/caseflow-steadystate-template.ats1.5.xml ./
 cp ../../Naches_ATS_2D_cleaned/notebooks/caseflow-cyclic_steadystate-template.ats1.5.xml ./
 cp ../../Naches_ATS_2D_cleaned/notebooks/caseflow-transient-template.ats1.5.xml ./

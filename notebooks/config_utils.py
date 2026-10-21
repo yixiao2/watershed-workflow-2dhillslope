@@ -129,3 +129,66 @@ def noleap_day_of_year(day):
 
 def _is_leap(year):
     return year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
+
+
+def first_postfire_year(config):
+    """Inclusive 365-day no-leap response window, independent of run length."""
+    if 'postfire_transient' not in config:
+        raise ValueError('postfire_transient is required for the fire workflow')
+    start = phase_period(config, 'postfire_transient')[0]
+    end, count = start, 1
+    while count < 365:
+        end += timedelta(days=1)
+        if (end.month, end.day) != (2, 29):
+            count += 1
+    return start, end
+
+
+def artificial_baseline_year(config):
+    value = config.get('fire_workflow', {}).get('artificial_baseline_year', 2021)
+    if type(value) is not int or not 1 <= value <= 9999:
+        raise ValueError('fire_workflow.artificial_baseline_year must be a valid integer year')
+    return value
+
+
+def load_fire_workflow(config, base_dir, artificial=False):
+    """Resolve stage-specific inputs from the case root; keep schema-v2 optional."""
+    first_postfire_year(config)
+    settings = config.get('fire_workflow', {})
+    if not isinstance(settings, dict):
+        raise ValueError('fire_workflow must be an object')
+    base = Path(base_dir).resolve()
+    mtbs = '../../MaterialsData/MTBS_fire_WA_2021/MTBS_fire_shp_files/2021/wa4684012114620210804/'
+    stem = 'wa4684012114620210804_20210725_20220728'
+    modis = f"notebooks/MODIS_raw/{config['case']['watershed_name']}/{config['case']['watershed_name']}-square/"
+    values = dict(scenario='s1', severity='low', burn_raster=mtbs + stem + '_dnbr6.tif',
+                  perimeter=mtbs + stem + '_burn_bndy.shp',
+                  modis_lai=modis + 'MCD15A3H.061_500m_aid0001.nc',
+                  modis_landcover=modis + 'MCD12Q1.061_500m_aid0001.nc',
+                  fire_elm_run=config['postfire_transient']['elm_run'],
+                  nofire_elm_run='2024-11-20-220109',
+                  artificial_baseline_year=2021)
+    values.update(settings)
+    if not isinstance(values['scenario'], str) or not values['scenario'].isalnum():
+        raise ValueError('fire_workflow.scenario must be an alphanumeric folder suffix')
+    if values['severity'] not in ('unburned/no-low', 'low', 'moderate', 'high'):
+        raise ValueError('Invalid fire_workflow.severity')
+    keys = ['burn_raster']
+    if artificial:
+        artificial_baseline_year(config)
+        keys += ['perimeter', 'modis_lai', 'modis_landcover']
+        for key in ('fire_elm_run', 'nofire_elm_run'):
+            if not isinstance(values[key], str) or not values[key] or Path(values[key]).name != values[key]:
+                raise ValueError(f'fire_workflow.{key} must be an ELM realization name')
+        values['elm_root'] = (base / config['elm_root']).resolve()
+        for key in ('fire_elm_run', 'nofire_elm_run'):
+            path = values['elm_root'] / f"ELM_MOSART_CONUS.{values[key]}" / 'run'
+            if not path.is_dir():
+                raise ValueError(f'Missing paired ELM input directory: {path}')
+    for key in keys:
+        if not isinstance(values[key], str) or not values[key]:
+            raise ValueError(f'fire_workflow.{key} must be a source file path')
+        values[key] = (base / values[key]).resolve()
+        if not values[key].is_file():
+            raise ValueError(f'Missing fire source input {key}: {values[key]}')
+    return values

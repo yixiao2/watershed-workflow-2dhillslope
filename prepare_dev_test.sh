@@ -1,41 +1,17 @@
 #!/bin/bash
+set -euo pipefail
 
-mkdir ../test_Naches_ATS_2D_cleaned
-cd ../test_Naches_ATS_2D_cleaned
-
-# prepare folder notebooks
-mkdir notebooks
-cd notebooks
-cp ../../Naches_ATS_2D_cleaned/notebooks/*.ipynb ./
-cp ../../Naches_ATS_2D_cleaned/notebooks/config.json ./
-cp ../../Naches_ATS_2D_cleaned/notebooks/config_utils.py ./
-cp ../../Naches_ATS_2D_cleaned/notebooks/caseflow-steadystate-template.ats1.5.xml ./
-cp ../../Naches_ATS_2D_cleaned/notebooks/caseflow-cyclic_steadystate-template.ats1.5.xml ./
-cp ../../Naches_ATS_2D_cleaned/notebooks/caseflow-transient-template.ats1.5.xml ./
-
-#ln -s ../../Naches_ATS_2D_cleaned/notebooks/data ./data
-cp -d ../../Naches_ATS_2D_cleaned/notebooks/data ./data
-#ln -s ../../Naches_ATS_2D_cleaned/notebooks/MODIS_raw ./MODIS_raw
-cp -d ../../Naches_ATS_2D_cleaned/notebooks/MODIS_raw ./MODIS_raw
-#ln -s ../../Naches_ATS_2D_cleaned/notebooks/Naches_from_sundar ./Naches_from_sundar
-#ln -s ../../Naches_ATS_2D_cleaned/notebooks/ELM_from_huilin ./ELM_from_huilin
-cp -r ../../Naches_ATS_2D_cleaned/notebooks/ELM_outputs_process ./ELM_outputs_process
-cp -r ../../Naches_ATS_2D_cleaned/notebooks/site_selection ./site_selection
-
-cd ..
-# prepare folders for case ats-flow run0/1/2
-cp -r ../Naches_ATS_2D_cleaned/caseflow-run0 ./
-cp -r ../Naches_ATS_2D_cleaned/caseflow-run1 ./
-cp -r ../Naches_ATS_2D_cleaned/caseflow-run2 ./
-
-# prepare folders for case ats-pflotran run1/run2
-cp -r ../Naches_ATS_2D_cleaned/casecybernetic-run1 ./
-cp -r ../Naches_ATS_2D_cleaned/casecybernetic-run2 ./
-
-# copy atspflotranutils
-cp -r ../Naches_ATS_2D_cleaned/atspflotranutils ./
-
-# copy processed data from ELM-BGC
-#mkdir data-processed
-#cd data-processed
-#cp -r ../notebooks/ELM_from_huilin/*.h5 ./
+# A fresh destination avoids overwriting an existing, possibly running case.
+repo_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
+target_dir=${1:-"$repo_dir/../test_Naches_ATS_2D_cleaned"}
+mkdir -- "$target_dir"
+mkdir -- "$target_dir/notebooks"
+cp -- "$repo_dir"/notebooks/*.ipynb "$repo_dir"/notebooks/*.py \
+    "$repo_dir/notebooks/config.json" "$repo_dir/notebooks/README.md" \
+    "$repo_dir"/notebooks/caseflow-*-template.ats1.5.xml "$target_dir/notebooks/"
+# Preserve external-data symlinks instead of copying raw datasets.
+cp -d -- "$repo_dir/notebooks/data" "$repo_dir/notebooks/MODIS_raw" "$target_dir/notebooks/"
+cp -a -- "$repo_dir/notebooks/ELM_outputs_process" "$repo_dir/notebooks/site_selection" "$target_dir/notebooks/"
+cp -a -- "$repo_dir/caseflow-run0" "$repo_dir/caseflow-run1" "$repo_dir/caseflow-run2" \
+    "$repo_dir/atspflotranutils" "$target_dir/"
+# Notebooks 2–5 generate the lambda run directories from approved inputs.
